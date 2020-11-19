@@ -1,0 +1,45 @@
+<Message
+  avatar="https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
+  text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
+  date="Sat Oct 17 2020 23:23:45"
+  attachments={[
+    {
+      filename: "image.jpg",
+      url: "https://source.unsplash.com/100x100/?random=1&nature,water",
+    },
+    {
+      filename: "image.jpg",
+      url: "https://source.unsplash.com/100x100/?random=2&nature,water",
+    },
+    {
+      filename: "image.jpg",
+      url: "https://source.unsplash.com/100x100/?random=3&nature,water",
+    },
+  ]}
+/>
+<Message
+  avatar="https://source.unsplash.com/100x100/?random=3&nature,water"
+  text="Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻"
+  date="Sat Oct 17 2020 23:30:45"
+  isMe={true}
+  isReaded={false}
+/>
+<Message
+  avatar="https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
+  date="Sat Oct 17 2020 23:23:45"
+  attachments={[
+    {
+      filename: "image.jpg",
+      url: "https://source.unsplash.com/100x100/?random=1&nature,water",
+    },
+  ]}
+/>
+<Message
+  avatar="https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
+  isTyping={true}
+/>
+<Message
+  avatar="https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
+  text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
+  date="Sat Oct 17 2020 23:23:45"
+/>

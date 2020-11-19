@@ -1,0 +1,30 @@
+.notes__category {
+  padding: 6px;
+  background: #edeef6;
+  border-radius: 10px;
+  width: 600px;
+
+  .notes__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .notes__link {
+      padding: 8px 47px;
+      text-align: center;
+      color: #7f808c;
+      cursor: pointer;
+      font-size: 15px;
+
+      &.active {
+        background-color: #fff;
+        border-radius: 5px;
+        color: #212529;
+      }
+
+      &:hover {
+        color: #212529;
+      }
+    }
+  }
+}

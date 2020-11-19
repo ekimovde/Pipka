@@ -1,0 +1,53 @@
+@import "~styles/variables";
+
+.notes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  b {
+    color: $black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  p {
+    color: #aab0b7;
+    font-size: 13px;
+  }
+
+  label {
+    color: #7f808c;
+  }
+
+  .anticon {
+    font-size: 18px;
+  }
+
+  .notes__top {
+    padding: 25px 50px 25px 50px;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .notes__bottom {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 45px 50px;
+
+    .notes__wrapper {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+}

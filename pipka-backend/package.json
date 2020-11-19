@@ -1,0 +1,13 @@
+{
+  "name": "kakadoo-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Denis",
+  "license": "MIT",
+  "scripts": {
+    "serve": "json-server --watch db.json --port 9999"
+  },
+  "devDependencies": {
+    "json-server": "^0.16.2"
+  }
+}

@@ -1,0 +1,33 @@
+@import '~styles/variables';
+
+.dialogs{
+  width: 100%;
+  min-width: 324px;
+  height: 100%;
+
+  .ant-empty {
+    display: none;
+    p {
+      color: $black;
+      font-size: 15px;
+    }
+  }
+
+  &.dialogs--loading {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dialogs__empty {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ant-empty {
+      display: block;
+    }
+  }
+}

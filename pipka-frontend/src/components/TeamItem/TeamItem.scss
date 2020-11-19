@@ -1,0 +1,67 @@
+@import "~styles/variables";
+
+.sidebar__teams-block {
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  span {
+    font-size: 14px;
+    color: #7f808c;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .sidebar__teams-card {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 20px 15px 20px 20px;
+
+    .sidebar__teams-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+    .sidebar__teams-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .sidebar__teams-text {
+        h5 {
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+
+        p {
+          color: #aeb1b4;
+          font-size: 13px;
+        }
+      }
+      .sidebar__teams-btn {
+        cursor: pointer;
+
+        .anticon {
+          font-size: 24px;
+          margin-bottom: 0;
+          color: #aeb1b4;
+
+          &:hover {
+            color: #7f808c;
+          }
+        }
+      }
+    }
+  }
+}

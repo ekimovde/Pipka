@@ -1,0 +1,107 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: #1d1d1f;
+
+  .auth__content {
+    width: 370px;
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+
+      h1 {
+        color: #fff;
+        font-size: 34px;
+      }
+
+      p {
+        color: #a7a7a7;
+        font-size: 14px;
+        margin-top: 16px;
+      }
+    }
+
+    .form {
+      .offer {
+        .offer__block {
+          margin-bottom: 20px;
+
+          &:last-child {
+            margin-bottom: 20px;
+          }
+
+          .offer__input {
+            background-color: #2d3238;
+            border-radius: 5px;
+            width: 100%;
+            padding: 20px 20px;
+            border-style: none;
+            color: #fff;
+
+            &.error {
+              border: 2px solid #ff5d5d;
+            }
+            &.successed {
+              border: 2px solid #4fd85c;
+            }
+            &::placeholder {
+              font-size: 15px;
+            }
+          }
+        }
+
+        .offer__reset {
+          font-size: 15px;
+          text-align: right;
+          margin-bottom: 20px;
+
+          .footer__link {
+            &:hover {
+              color: #0053b4;
+            }
+          }
+        }
+
+        .offer__reset-checked {
+          text-align: left;
+          label {
+            color: #a7a7a7;
+            font-size: 14px;
+
+            .ant-checkbox {
+              .ant-checkbox-inner {
+                border-radius: 5px;
+              }
+            }
+            .ant-checkbox-checked::after {
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+
+      .offer__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+
+        p {
+          color: #a7a7a7;
+          font-size: 14px;
+          margin-right: 5px;
+        }
+
+        .footer__link {
+          &:hover {
+            color: #0053b4;
+          }
+        }
+      }
+    }
+  }
+}

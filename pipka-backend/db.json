@@ -1,0 +1,198 @@
+{
+  "dialogs": [
+    {
+      "_id": "205b4345307a67799a2bab39c11865c0",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      "created_at": "Sat Aug 25 2012 21:39:21",
+      "user": {
+        "_id": "205b4345307a67799a2bab39c11865c0",
+        "fullName": "Elise Roth",
+        "avatar": "https://themes.2the.me/Messenger-1.1/demo-light/assets/images/avatars/12.jpg"
+      }
+    },
+    {
+      "_id": "a2534132d46522cb3b320de1a7894c2b",
+      "text": "But I must explain to you how all this mistaken idea",
+      "created_at": "Tue Apr 26 1983 03:36:35",
+      "user": {
+        "_id": "a2534132d46522cb3b320de1a7894c2b",
+        "fullName": "Webb Francis",
+        "avatar": null,
+        "isOnline": true
+      }
+    },
+    {
+      "_id": "96429aff102f26711323a98d42a9f8d6",
+      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
+      "created_at": "Wed Apr 01 2015 12:12:46",
+      "user": {
+        "_id": "96429aff102f26711323a98d42a9f8d6",
+        "fullName": "Callahan Haley",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "2t819afc3d0bbb4708f2d654fc9740a1",
+      "text": "On the other hand, we denounce with righteous indignation",
+      "created_at": "Thu Jan 20 1983 00:28:07",
+      "user": {
+        "_id": "2t819afc3d0bbb4708f2d654fc9740a1",
+        "fullName": "Franco Herman",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "1c819afc3d0bbb4708f2d654fc9740a1",
+      "text": "On the other hand, we denounce with righteous indignation",
+      "created_at": "Thu Jan 20 1983 00:28:07",
+      "user": {
+        "_id": "1c819afc3d0bbb4708f2d654fc9740a1",
+        "fullName": "Franco Herman",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "21819afc3d0bbb4708f2d654fc9740a1",
+      "text": "On the other hand, we denounce with righteous indignation",
+      "created_at": "Thu Jan 20 1983 00:28:07",
+      "user": {
+        "_id": "21819afc3d0bbb4708f2d654fc9740a1",
+        "fullName": "Franco Herman",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "8h619afc3d0bbb4708f2d654fc9740a1",
+      "text": "On the other hand, we denounce with righteous indignation",
+      "created_at": "Thu Jan 20 1983 00:28:07",
+      "user": {
+        "_id": "8h619afc3d0bbb4708f2d654fc9740a1",
+        "fullName": "Franco Herman",
+        "avatar": null
+      }
+    }
+  ],
+  "messages": [
+    {
+      "_id": "105b4345307a67799a2bab39c11865c0",
+      "text": "Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝",
+      "date": "Sat Oct 17 2020 23:23:45",
+      "user": {
+        "_id": "201b4345307a67799a2bab39c11865c0",
+        "fullName": "Elise Roth",
+        "avatar": "https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
+      },
+      "dialog": "201b4345307a67799a2bab39c11865c0",
+      "isMe": true
+    },
+    {
+      "_id": "a25124132d46522cb3b320de1a7894c2b",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      "date": "Sat Aug 25 2012 21:39:21",
+      "user": {
+        "_id": "205b4345307a67799a2bab39c11865c0",
+        "fullName": "Webb Francis",
+        "avatar": null
+      },
+      "dialog": "205b4345307a67799a2bab39c11865c0"
+    },
+    {
+      "_id": "a2534132d46522cb3b320de1a7894c2b",
+      "text": "But I must explain to you how all this mistaken idea",
+      "date": "Tue Apr 26 1983 03:36:35",
+      "user": {
+        "_id": "205b4345307a67799a2bab39c11865c0",
+        "fullName": "Webb Francis",
+        "avatar": null
+      },
+      "dialog": "205b4345307a67799a2bab39c11865c0"
+    },
+    {
+      "_id": "96429aff102f26711323a98d42a9f8d6",
+      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
+      "date": "Wed Apr 01 2015 12:12:46",
+      "user": {
+        "_id": "a2534132d46522cb3b320de1a7894c2b",
+        "fullName": "Webb Francis",
+        "avatar": "https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
+      },
+      "dialog": "205b4345307a67799a2bab39c11865c0",
+      "isMe": true,
+      "isReaded": false
+    },
+    {
+      "_id": "2t819afc3d0bbb4708f2d654fc9740a1",
+      "text": "On the other hand, we denounce with righteous indignation",
+      "date": "Thu Jan 20 1983 00:28:07",
+      "user": {
+        "_id": "a2534132d46522cb3b320de1a7894c2b",
+        "fullName": "Webb Francis",
+        "avatar": null
+      },
+      "dialog": "205b4345307a67799a2bab39c11865c0"
+    },
+    {
+      "_id": "1c819afc3d0bbb4708f2d654fc9740a1",
+      "text": "On the other hand, we denounce with righteous indignation",
+      "date": "Thu Jan 20 1983 00:28:07",
+      "user": {
+        "_id": "a2534132d46522cb3b320de1a7894c2b",
+        "fullName": "Webb Francis",
+        "avatar": null
+      },
+      "dialog": "205b4345307a67799a2bab39c11865c0"
+    },
+    {
+      "_id": "21819afc3d0bbb4708f2d654fc9740a1",
+      "text": "On the other hand, we denounce with righteous indignation",
+      "date": "Thu Jan 20 1983 00:28:07",
+      "user": {
+        "_id": "a2534132d46522cb3b320de1a7894c2b",
+        "fullName": "Webb Francis",
+        "avatar": null
+      },
+      "dialog": "205b4345307a67799a2bab39c11865c0"
+    }
+  ],
+  "notes": [
+    {
+      "_id": "03b04345307a67799a2bab39c11865c0",
+      "statusNotes": "Yet to start",
+      "title": "Focus Time",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
+      "date_start": "Nov 01, 19",
+      "date_end": "Jan 31, 20",
+      "user": {
+        "_id": "sa2b4345307a67799a2bab39c11865c0",
+        "fullName": "Jack Matison",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "05b04345307a67799a2bab39c11865c0",
+      "statusNotes": "Active",
+      "title": "Delivery Process",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
+      "date_start": "Nov 18, 20",
+      "date_end": "Jan 29, 21",
+      "user": {
+        "_id": "205b4345307a67799a2bab39c11865c0",
+        "fullName": "Matthew Wiggins",
+        "avatar": "https://themes.2the.me/Messenger-1.1/demo-light/assets/images/avatars/12.jpg"
+      }
+    },
+    {
+      "_id": "01b04345307a67799a2bab39c11865c0",
+      "statusNotes": "Completed",
+      "title": "QA Testing Devices",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
+      "date_start": "Nov 01, 19",
+      "date_end": "Jan 31, 20",
+      "user": {
+        "_id": "105b4345307a67799a2bab39c11865c0",
+        "fullName": "Matt Jackson",
+        "avatar": null
+      }
+    }
+  ]
+}

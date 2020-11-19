@@ -1,0 +1,21 @@
+.dialog__status {
+  color: #a6a6a6;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  &.dialog__status--online {
+    &::before {
+      background-color: #00C980;
+    }
+  }
+  &::before {
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 30px;
+    background-color: #00C980;
+    background-color: #d3d3d3;
+    margin-right: 5px;
+  }
+}

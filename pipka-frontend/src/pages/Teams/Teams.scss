@@ -1,0 +1,103 @@
+@import "~styles/variables";
+
+.sidebar__teams {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .sidebar__teams-top {
+    .sidebar__teams-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+
+      b {
+        font-size: 26px;
+      }
+    }
+
+    .sidebar__teams-input {
+      display: flex;
+      align-items: center;
+      margin-bottom: 22px;
+      width: 100%;
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 15px 50px 15px 20px;
+        border-style: none;
+        border-radius: 4px;
+        background: #edeef6;
+
+        &::placeholder {
+          font-weight: 600;
+          font-size: 14px;
+          color: #aab0b7;
+        }
+      }
+
+      .sidebar__teams-icon {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        right: 0;
+        cursor: pointer;
+
+        .anticon {
+          font-size: 20px;
+        }
+
+        &:hover {
+          .anticon {
+            color: #979393;
+          }
+        }
+      }
+    }
+
+    .sidebar__teams-add {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      background: #edeef6;
+      padding: 15px 15px 15px 20px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+
+      p {
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: #d3d7e9;
+      }
+
+      .sidebar__teams-icon {
+        .anticon {
+          font-size: 16px;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .sidebar__teams-bottom {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .sidebar__teams-none {
+      padding-bottom: 20px;
+    }
+  }
+}

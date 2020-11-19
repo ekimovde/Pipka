@@ -1,0 +1,86 @@
+@import '~styles/variables';
+
+.dialog__input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 30px 35px 37px 35px;
+  position: relative;
+  margin-top: auto;
+
+  .anticon {
+    cursor: pointer;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .dialog__input-smile {
+    position: absolute;
+    left: 48px;
+
+    .dialog__input-emoji {
+      position: absolute;
+      bottom: 24px;
+      left: 0px;
+
+      .emoji-mart {
+        .emoji-mart-search {
+          margin-top: 10px;
+          margin-bottom: 10px;
+
+          .emoji-mart-search-icon {
+            top: 4px;
+          }
+        }
+
+        span {
+          cursor: pointer;
+        }
+
+        .emoji-mart-bar {
+          display: none;
+        }
+      }
+    }
+  }
+
+  input {
+    padding: 14px 14px 14px 45px;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    outline: none;
+    border: 1px solid #e9e9e9;
+
+    &:focus {
+      border: 1px solid #3674FF;
+    }
+  }
+
+  .dialog__input-actions {
+    display: flex;
+    margin-left: 10px;
+    .anticon {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .photos {
+      position: absolute;
+      width: 21px;
+      height: 21px;
+
+      input {
+        position: relative !important;
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+}
+

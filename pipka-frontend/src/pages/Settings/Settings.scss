@@ -1,0 +1,365 @@
+@import "~styles/variables";
+
+.sidebar__settings {
+  width: 230px;
+  height: 100%;
+  padding: 15px 15px 0 15px;
+  border-right: 1px solid #ececec;
+  background-color: #f8f8f9;
+
+  .sidebar__settings-menu {
+    .sidebar__settings-link {
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      a {
+        color: #a6a6a6;
+        font-size: 16px;
+      }
+
+      &:hover {
+        background-color: #e7e9eb;
+        a {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.settings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  b {
+    color: $black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  p {
+    color: #aab0b7;
+    font-size: 13px;
+  }
+
+  label {
+    color: #7f808c;
+  }
+
+  input {
+    padding: 15px 20px;
+    border-style: none;
+    background-color: #edeef6;
+    border-radius: 5px;
+
+    &::placeholder {
+      color: #8c8c8c;
+    }
+  }
+
+  .btn {
+    background: $blue;
+    border-style: none;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+
+    &:hover {
+      color: #fff;
+      background-color: #0064da;
+    }
+  }
+
+  .anticon {
+    font-size: 18px;
+  }
+
+  .settings__top {
+    padding: 25px 0 25px 50px;
+    border-bottom: 1px solid #ececec;
+  }
+
+  .settings__bottom {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .settings__offer {
+      height: 100%;
+      overflow: auto;
+      width: 100%;
+      padding: 45px 35px;
+      display: flex;
+      justify-content: center;
+
+      .settings__block-one {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 630px;
+
+        .settings__account {
+          border: 1px solid #ececec;
+          border-radius: 5px;
+          width: 100%;
+
+          .settings__account-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 20px;
+            border-bottom: 1px solid #ececec;
+
+            .settings__account-offer {
+              b {
+                font-size: 16px;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+
+          .settings__account-form {
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            .settings__account-group {
+              margin-bottom: 30px;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              .settings__account-stretched {
+                background-color: #edeef6;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 20px 50px;
+                cursor: pointer;
+
+                .settings__account-icon {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 30px;
+                  background-color: $blue;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  .anticon {
+                    color: #fff;
+                    font-size: 19px;
+                  }
+                }
+
+                .settings__account-text {
+                  text-align: center;
+                  margin-top: 20px;
+                  p {
+                    margin-bottom: 5px;
+                    &:last-child {
+                      margin-bottom: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .settings__notifications {
+          width: 100%;
+          border: 1px solid #ececec;
+          margin-top: 45px;
+          border-radius: 5px;
+
+          .settings__notifications-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ececec;
+            padding: 25px 20px;
+
+            .settings__notifications-offer {
+              b {
+                font-size: 16px;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+
+          .settings__notifications-block {
+            padding: 25px 20px;
+
+            .settings__notifications-group {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              border-bottom: 1px solid #ececec;
+              padding: 0 0 15px 0;
+              margin-bottom: 20px;
+              &:last-child {
+                margin-bottom: 0;
+                border-bottom: none;
+                padding: 0;
+              }
+            }
+          }
+        }
+
+        .settings__none {
+          width: 100%;
+          border: 1px solid #fff;
+          margin-top: 45px;
+          border-radius: 5px;
+        }
+      }
+
+      .settings__block-two {
+        margin-left: 100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 630px;
+
+        .settings__security {
+          border: 1px solid #ececec;
+          border-radius: 5px;
+          width: 100%;
+
+          .settings__security-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 20px;
+            border-bottom: 1px solid #ececec;
+
+            .settings__security-offer {
+              b {
+                font-size: 16px;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+
+          .settings__account-form {
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            .settings__account-group {
+              margin-bottom: 30px;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+
+        .settings__social {
+          border: 1px solid #ececec;
+          border-radius: 5px;
+          width: 100%;
+          margin-top: 45px;
+
+          .settings__social-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 20px;
+            border-bottom: 1px solid #ececec;
+
+            .settings__social-offer {
+              b {
+                font-size: 16px;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+
+          .settings__social-form {
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            .settings__social-group {
+              margin-bottom: 30px;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              .settings__social-input {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .settings__social-icon {
+                  width: 50px;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  position: absolute;
+                  cursor: pointer;
+
+                  &:hover {
+                    .anticon {
+                      color: #979393;
+                    }
+                  }
+
+                  .anticon {
+                    font-size: 21px;
+                  }
+                }
+
+                input {
+                  width: 100%;
+                  padding-left: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
