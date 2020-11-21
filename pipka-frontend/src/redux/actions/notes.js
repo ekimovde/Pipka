@@ -5,8 +5,8 @@ const actions = {
     type: "NOTES:SET_ITEMS",
     payload: items,
   }),
-  fetchNotes: () => (dispatch) => {
-    notesApi.getAllNotes().then(({ data }) => {
+  fetchNotes: (categoryNotes, sortByNotes) => (dispatch) => {
+    notesApi.getAllNotes(categoryNotes, sortByNotes).then(({ data }) => {
       dispatch(actions.setNotes(data));
     });
   },

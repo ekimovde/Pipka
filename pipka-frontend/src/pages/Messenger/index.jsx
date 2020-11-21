@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import { Status } from "components";
 import { Dialogs, Messages } from "containers";
 
 import { FormOutlined, SearchOutlined } from "@ant-design/icons";
@@ -35,6 +35,10 @@ const Messenger = ({ flag }) => {
   ) : (
     <Messages />
   );
+};
+
+Messenger.propTypes = {
+  flag: PropTypes.bool,
 };
 
 export default Messenger;

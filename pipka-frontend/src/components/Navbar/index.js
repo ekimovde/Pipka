@@ -12,7 +12,7 @@ import logoSvg from "assets/img/logo.svg";
 
 import "./Navbar.scss";
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <div className="navbars">
       <div className="navbars__wrapper">

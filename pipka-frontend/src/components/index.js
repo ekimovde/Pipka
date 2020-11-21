@@ -16,3 +16,4 @@ export { default as TeamItem } from "./TeamItem";
 export { default as Notes } from "./Notes";
 export { default as NotesItem } from "./NotesItem";
 export { default as CategoryNotes } from "./CategoryNotes";
+export { default as SortByNotes } from "./SortByNotes";

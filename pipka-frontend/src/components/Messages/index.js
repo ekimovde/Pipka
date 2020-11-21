@@ -54,6 +54,7 @@ const Messages = ({ items, isLoading, blockRef }) => {
 
 Messages.propTypes = {
   items: PropTypes.array,
+  isLoading: PropTypes.bool,
 };
 
 export default Messages;

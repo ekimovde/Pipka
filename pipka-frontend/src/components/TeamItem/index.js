@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Avatar } from "../";
-
 import { MoreOutlined } from "@ant-design/icons";
 
 import "./TeamItem.scss";
@@ -26,6 +26,11 @@ const TeamItem = ({ user, char }) => {
       </div>
     </div>
   );
+};
+
+TeamItem.propTypes = {
+  user: PropTypes.object,
+  char: PropTypes.string,
 };
 
 export default TeamItem;

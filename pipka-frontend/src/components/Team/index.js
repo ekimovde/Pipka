@@ -1,5 +1,6 @@
 import React from "react";
 import orderBy from "lodash/orderBy";
+import PropTypes from "prop-types";
 
 import { TeamItem } from "components";
 
@@ -23,6 +24,10 @@ const Team = ({ items }) => {
       <div className="sidebar__teams-none"></div>
     </div>
   );
+};
+
+Team.propTypes = {
+  items: PropTypes.array,
 };
 
 export default Team;

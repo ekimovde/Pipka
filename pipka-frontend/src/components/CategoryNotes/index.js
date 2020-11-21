@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+
 import classNames from "classnames";
 
 import "./CategoryNotes.scss";
 
-const CategoryNotes = () => {
-  const categoryName = ["Yet to start", "Active", "Completed"];
-  const [categoryIndex, setCategoryIndex] = useState(null);
-
-  const onClickCategory = (index) => {
-    setCategoryIndex(index);
-  };
-
+const CategoryNotes = React.memo(function CategoryNotes({
+  activeCategory,
+  onClickCategory,
+  categoryName,
+}) {
   return (
     <div className="notes__category">
       <ul className="notes__menu">
         <li
           className={classNames("notes__link", {
-            active: categoryIndex === null,
+            active: activeCategory === null,
           })}
           onClick={() => onClickCategory(null)}
         >
@@ -25,10 +24,10 @@ const CategoryNotes = () => {
         {categoryName.map((name, index) => (
           <li
             className={classNames("notes__link", {
-              active: categoryIndex === index,
+              active: activeCategory === name,
             })}
             key={`${name}_${index}`}
-            onClick={() => onClickCategory(index)}
+            onClick={() => onClickCategory(name)}
           >
             {name}
           </li>
@@ -36,6 +35,12 @@ const CategoryNotes = () => {
       </ul>
     </div>
   );
+});
+
+CategoryNotes.propTypes = {
+  activeCategory: PropTypes.oneOfType([null || PropTypes.string]),
+  categoryName: PropTypes.array.isRequired,
+  onClickCategory: PropTypes.func.isRequired,
 };
 
 export default CategoryNotes;

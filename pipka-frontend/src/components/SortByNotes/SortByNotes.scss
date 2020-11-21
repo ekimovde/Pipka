@@ -1,0 +1,27 @@
+.notes__sort {
+  position: relative;
+  background: #edeef6;
+  border-radius: 5px;
+  padding: 4px;
+
+  .notes__sort-icon {
+    padding: 8px 10px;
+    color: #7f808c;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+
+    .anticon {
+      margin-right: 8px;
+      font-size: 21px;
+    }
+
+    &:hover {
+      color: #212529;
+      .anticon {
+        color: #212529;
+      }
+    }
+  }
+}

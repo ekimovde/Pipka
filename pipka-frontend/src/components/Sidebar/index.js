@@ -5,7 +5,7 @@ import { Profile, Messenger, Teams, Tasks, Layouts } from "pages";
 
 import "./Sidebar.scss";
 
-const Sidebar = ({}) => {
+const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__wrapper">

@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Info.scss";
 
-const Info = ({ routes }) => {
+const Info = () => {
   return (
     <div className="info">
       <div className="info__block">

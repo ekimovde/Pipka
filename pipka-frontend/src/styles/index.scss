@@ -78,3 +78,70 @@ button:active {
     justify-content: center;
   }
 }
+
+// --- Context Menu ---
+.notes__context {
+  background: #f5f6fa;
+  width: 180px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+
+  &.notes__context--sortBy {
+    top: 55px;
+  }
+
+  .notes__ctx {
+    padding: 5px 5px 5px 5px;
+    border-bottom: 1px solid #ececec;
+
+    &:last-child {
+      border-style: none;
+    }
+
+    .notes__item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px 10px;
+
+      &:hover {
+        background-color: #fff;
+        border-radius: 5px;
+
+        p {
+          color: #212529;
+        }
+
+        .anticon {
+          color: #212529;
+        }
+      }
+
+      .anticon {
+        margin-right: 10px;
+        font-size: 21px;
+      }
+
+      p {
+        color: #7f808c;
+        font-size: 15px;
+      }
+
+      &.notes__item-red {
+        &:hover {
+          background-color: #ffecef;
+          border-radius: 5px;
+
+          p {
+            color: #ee6a5f;
+          }
+
+          .anticon {
+            color: #ee6a5f;
+          }
+        }
+      }
+    }
+  }
+}
