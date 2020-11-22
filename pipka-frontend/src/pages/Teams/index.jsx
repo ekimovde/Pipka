@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { SearchOutlined, TeamOutlined, MoreOutlined } from "@ant-design/icons";
+import { SearchOutlined, TeamOutlined } from "@ant-design/icons";
 import { Teams as Friends } from "containers";
 
 import "./Teams.scss";

@@ -25,7 +25,7 @@ const Dialogs = ({
     if (!items.length) {
       fetchDialogs();
     }
-  }, [isLoading]);
+  }, [isLoading, fetchDialogs, items.length]);
 
   useEffect(() => {
     if (dialogsRef.current) {

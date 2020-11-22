@@ -42,8 +42,8 @@ const SortByNotes = React.memo(function SortByNotes({
       </div>
       {viewSortByMenu && (
         <div className="notes__context notes__context--sortBy">
-          {sortByType.map((obj) => (
-            <div className="notes__ctx" key={obj.type}>
+          {sortByType.map((obj, index) => (
+            <div className="notes__ctx" key={`${obj.type}_${index}`}>
               <div
                 className={classNames("notes__item", {
                   active: activeSortBy === obj.type,

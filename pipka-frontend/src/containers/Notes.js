@@ -9,7 +9,7 @@ const Notes = ({ items, fetchNotes, categoryNotes, sortByNotes }) => {
     if (!items.length) {
       fetchNotes(categoryNotes, sortByNotes);
     }
-  }, []);
+  }, [fetchNotes, items.length, categoryNotes, sortByNotes]);
 
   return <BaseNotes items={items} />;
 };

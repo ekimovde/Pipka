@@ -6,16 +6,25 @@ import { NotesItem, CategoryNotes, SortByNotes } from "components";
 import { filtersActions } from "redux/actions";
 import { notesActions } from "redux/actions";
 
-import { FontSizeOutlined } from "@ant-design/icons";
+import {
+  SortAscendingOutlined,
+  SortDescendingOutlined,
+} from "@ant-design/icons";
 
 import "./Notes.scss";
 
 const categoryName = ["Yet to start", "Active", "Completed"];
 const sortByItems = [
   {
-    name: "Заголовку",
+    name: "Title",
     type: "title",
-    icon: <FontSizeOutlined />,
+    icon: <SortAscendingOutlined />,
+    order: "asc",
+  },
+  {
+    name: "Title",
+    type: "title",
+    icon: <SortDescendingOutlined />,
     order: "desc",
   },
 ];

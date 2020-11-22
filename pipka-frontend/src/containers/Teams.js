@@ -15,7 +15,7 @@ const Teams = ({ fetchDialogs, value, items }) => {
     if (!items.length) {
       fetchDialogs();
     }
-  }, []);
+  }, [fetchDialogs, items.length]);
 
   return <Team items={items} />;
 };
