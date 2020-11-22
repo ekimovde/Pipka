@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 
-import { Avatar } from "components";
+import { Avatar, Time } from "components";
 import {
   EllipsisOutlined,
   EditOutlined,
@@ -62,12 +62,16 @@ const NotesItem = ({
         <div className="notes__info">
           <b className="notes__name">{user.fullName}</b>
           <span className="notes__date">
-            {date_start} - {date_end}
+            <Time date={date_start} type="notesItem-date" /> -{" "}
+            <Time date={date_end} type="notesItem-date" />
           </span>
         </div>
 
-        <div className="notes__icon" ref={contextRef}>
-          <EllipsisOutlined onClick={() => onClickContextMenu()} />
+        <div className="notes__icon">
+          <EllipsisOutlined
+            onClick={() => onClickContextMenu()}
+            ref={contextRef}
+          />
 
           {viewContextMenu && (
             <div className="notes__context">

@@ -146,7 +146,7 @@ const Message = ({
       {date && (
         <div className="message__date">
           <span>
-            <Time date={date} />
+            <Time date={date} type="message-date" />
           </span>
         </div>
       )}

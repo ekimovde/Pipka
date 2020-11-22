@@ -160,8 +160,8 @@
       "statusNotes": "Yet to start",
       "title": "Focus Time",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
-      "date_start": "Nov 01, 19",
-      "date_end": "Jan 31, 20",
+      "date_start": "Sat Aug 25 2012",
+      "date_end": "Sat Aug 30 2012",
       "user": {
         "_id": "sa2b4345307a67799a2bab39c11865c0",
         "fullName": "Jack Matison",
@@ -173,8 +173,8 @@
       "statusNotes": "Active",
       "title": "Delivery Process",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
-      "date_start": "Nov 18, 20",
-      "date_end": "Jan 29, 21",
+      "date_start": "Sat Nov 23 2012",
+      "date_end": "Sat Jan 29 2012",
       "user": {
         "_id": "205b4345307a67799a2bab39c11865c0",
         "fullName": "Matthew Wiggins",
@@ -186,8 +186,8 @@
       "statusNotes": "Completed",
       "title": "QA Testing Devices",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
-      "date_start": "Nov 01, 19",
-      "date_end": "Jan 31, 20",
+      "date_start": "Sat Nov 01 2012",
+      "date_end": "Sat Jan 31 2012",
       "user": {
         "_id": "105b4345307a67799a2bab39c11865c0",
         "fullName": "Matt Jackson",

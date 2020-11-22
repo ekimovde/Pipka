@@ -91,6 +91,11 @@ button:active {
     top: 55px;
   }
 
+  &.notes__context-teams {
+    right: 10px;
+    top: 30px;
+  }
+
   .notes__ctx {
     padding: 5px 5px 5px 5px;
     border-bottom: 1px solid #ececec;

@@ -1,7 +1,6 @@
 import React from "react";
 import orderBy from "lodash/orderBy";
 import classNames from "classnames";
-import PropTypes from "prop-types";
 
 import { DialogItem } from "../";
 
