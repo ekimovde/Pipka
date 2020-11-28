@@ -1,198 +1,172 @@
 {
   "dialogs": [
     {
-      "_id": "205b4345307a67799a2bab39c11865c0",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
-      "created_at": "Sat Aug 25 2012 21:39:21",
+      "_id": "16e68d13b2678d793d340b5fb0c79297d",
+      "text": "Duis do eu culpa ad mollit sit minim quis sunt esse anim. Ex velit sint consequat ipsum fugiat irure consequat ut. Do tempor voluptate magna ipsum id pariatur.",
+      "created_at": "Sun Nov 03 1974 18:49:32 GMT+0000 (UTC)",
       "user": {
-        "_id": "205b4345307a67799a2bab39c11865c0",
-        "fullName": "Elise Roth",
-        "avatar": "https://themes.2the.me/Messenger-1.1/demo-light/assets/images/avatars/12.jpg"
-      }
-    },
-    {
-      "_id": "a2534132d46522cb3b320de1a7894c2b",
-      "text": "But I must explain to you how all this mistaken idea",
-      "created_at": "Tue Apr 26 1983 03:36:35",
-      "user": {
-        "_id": "a2534132d46522cb3b320de1a7894c2b",
-        "fullName": "Webb Francis",
-        "avatar": null,
-        "isOnline": true
-      }
-    },
-    {
-      "_id": "96429aff102f26711323a98d42a9f8d6",
-      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
-      "created_at": "Wed Apr 01 2015 12:12:46",
-      "user": {
-        "_id": "96429aff102f26711323a98d42a9f8d6",
-        "fullName": "Callahan Haley",
+        "_id": "6e68d13b2678d793d340b5fb0c79297d",
+        "fullname": "Perez Jacobson",
         "avatar": null
       }
     },
     {
-      "_id": "2t819afc3d0bbb4708f2d654fc9740a1",
-      "text": "On the other hand, we denounce with righteous indignation",
-      "created_at": "Thu Jan 20 1983 00:28:07",
+      "_id": "41b4cc8ffc01aef863dfa8afcbbd0986",
+      "text": "Lorem aute in culpa adipisicing aute aliquip nulla quis irure ea enim ullamco sunt. Consequat deserunt ipsum officia ut officia officia ut tempor tempor qui velit voluptate aliqua. Ad aliquip tempor tempor sint commodo esse deserunt et elit aute Lorem in et.",
+      "created_at": "Thu Apr 21 1977 23:23:36 GMT+0000 (UTC)",
       "user": {
-        "_id": "2t819afc3d0bbb4708f2d654fc9740a1",
-        "fullName": "Franco Herman",
+        "_id": "41b4cc8ffc01aef863dfa8afcbbd0986",
+        "fullname": "Fitzgerald Eaton",
         "avatar": null
       }
     },
     {
-      "_id": "1c819afc3d0bbb4708f2d654fc9740a1",
-      "text": "On the other hand, we denounce with righteous indignation",
-      "created_at": "Thu Jan 20 1983 00:28:07",
+      "_id": "e079c8cddf392c639c7e77481717352a",
+      "text": "Irure proident consequat ipsum dolore do Lorem mollit ad sit id. Consequat non exercitation sunt nostrud laborum consequat quis ea. Eiusmod occaecat excepteur do occaecat elit id aliqua dolore deserunt ea.",
+      "created_at": "Wed May 15 1985 16:40:53 GMT+0000 (UTC)",
       "user": {
-        "_id": "1c819afc3d0bbb4708f2d654fc9740a1",
-        "fullName": "Franco Herman",
+        "_id": "e079c8cddf392c639c7e77481717352a",
+        "fullname": "Stanton Alford",
         "avatar": null
       }
     },
     {
-      "_id": "21819afc3d0bbb4708f2d654fc9740a1",
-      "text": "On the other hand, we denounce with righteous indignation",
-      "created_at": "Thu Jan 20 1983 00:28:07",
+      "_id": "6e68d13b2678d793d340b5fb0c79297d",
+      "text": "Ut elit enim enim cupidatat ut velit eiusmod. Duis sint labore non velit elit qui do sunt in non nisi. Consectetur deserunt irure magna mollit aute.",
+      "created_at": "Wed Sep 19 1979 20:02:43 GMT+0000 (UTC)",
       "user": {
-        "_id": "21819afc3d0bbb4708f2d654fc9740a1",
-        "fullName": "Franco Herman",
+        "_id": "6e68d13b2678d793d340b5fb0c79297d",
+        "fullname": "Preston Cohen",
         "avatar": null
       }
     },
     {
-      "_id": "8h619afc3d0bbb4708f2d654fc9740a1",
-      "text": "On the other hand, we denounce with righteous indignation",
-      "created_at": "Thu Jan 20 1983 00:28:07",
+      "_id": "f31af49941293524c86c746c10e72f0d",
+      "text": "Eiusmod commodo velit proident sint enim. Commodo cupidatat laboris anim nisi id dolor fugiat sint adipisicing. Anim exercitation enim consequat duis.",
+      "created_at": "Sun Jun 25 2017 16:15:58 GMT+0000 (UTC)",
       "user": {
-        "_id": "8h619afc3d0bbb4708f2d654fc9740a1",
-        "fullName": "Franco Herman",
+        "_id": "f31af49941293524c86c746c10e72f0d",
+        "fullname": "Lenore Vinson",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "2f0405c6a12d20a5acbd91db41c016b8",
+      "text": "Minim ad consectetur consectetur laborum do consequat Lorem nisi mollit ex aute anim consectetur voluptate. Nostrud Lorem velit duis ut esse cillum exercitation occaecat. Adipisicing labore aliqua in ut fugiat labore magna.",
+      "created_at": "Wed Apr 01 1970 14:35:56 GMT+0000 (UTC)",
+      "user": {
+        "_id": "2f0405c6a12d20a5acbd91db41c016b8",
+        "fullname": "Audrey Lopez",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "24c931d4acbec73f8d5f0265c8f1d413",
+      "text": "Mollit officia amet commodo labore laborum exercitation irure. Excepteur reprehenderit occaecat ipsum nisi consequat duis consectetur mollit occaecat qui officia. Et consequat eiusmod duis eu eiusmod veniam cupidatat mollit laboris est.",
+      "created_at": "Sun Jun 25 2006 06:37:23 GMT+0000 (UTC)",
+      "user": {
+        "_id": "24c931d4acbec73f8d5f0265c8f1d413",
+        "fullname": "Mona Benton",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "cb20a36a653a59a3854c00d6c61ab3c8",
+      "text": "Quis cillum cillum pariatur Lorem excepteur proident consectetur sit elit est quis eu in. Sint qui labore quis quis cupidatat dolore laborum commodo dolore nisi dolor commodo et incididunt. Proident reprehenderit Lorem occaecat nisi laborum tempor est incididunt.",
+      "created_at": "Wed Apr 24 2013 15:52:05 GMT+0000 (UTC)",
+      "user": {
+        "_id": "cb20a36a653a59a3854c00d6c61ab3c8",
+        "fullname": "Bethany Oconnor",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "140ed62cb052f591a5f2999288357281",
+      "text": "Ad proident amet minim officia consectetur aliqua minim exercitation. Quis dolor pariatur eu excepteur. Sit adipisicing laboris sit nostrud in velit enim occaecat ipsum.",
+      "created_at": "Thu Sep 23 1982 04:11:53 GMT+0000 (UTC)",
+      "user": {
+        "_id": "140ed62cb052f591a5f2999288357281",
+        "fullname": "Tisha Duke",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "fa568cb4abc8dbb53f03432442481e22",
+      "text": "Ipsum nulla et in cillum ea commodo cupidatat proident. Id ipsum consequat minim ullamco reprehenderit quis aliqua duis quis. Anim eu aliquip laboris velit aliquip ea.",
+      "created_at": "Mon May 02 1983 03:30:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "fa568cb4abc8dbb53f03432442481e22",
+        "fullname": "Irma Lester",
         "avatar": null
       }
     }
   ],
   "messages": [
     {
-      "_id": "105b4345307a67799a2bab39c11865c0",
-      "text": "Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝",
-      "date": "Sat Oct 17 2020 23:23:45",
+      "_id": "35ce83ca80a9906817c95cbe0",
+      "text": ":santa: Ea deserunt exercitation sit irure aliqua ea. Nostrud est veniam eiusmod cillum duis exercitation veniam ad. Commodo occaecat veniam tempor ad dolor.",
+      "created_at": "Mon Jul 17 1978 15:23:39 GMT+0000 (UTC)",
       "user": {
-        "_id": "201b4345307a67799a2bab39c11865c0",
-        "fullName": "Elise Roth",
-        "avatar": "https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
-      },
-      "dialog": "201b4345307a67799a2bab39c11865c0",
-      "isMe": true
-    },
-    {
-      "_id": "a25124132d46522cb3b320de1a7894c2b",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
-      "date": "Sat Aug 25 2012 21:39:21",
-      "user": {
-        "_id": "205b4345307a67799a2bab39c11865c0",
-        "fullName": "Webb Francis",
+        "_id": "35ce83ca8dbf6c8e9d04dfe95",
+        "fullname": "Stafford Whitley",
         "avatar": null
       },
-      "dialog": "205b4345307a67799a2bab39c11865c0"
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
     },
     {
-      "_id": "a2534132d46522cb3b320de1a7894c2b",
-      "text": "But I must explain to you how all this mistaken idea",
-      "date": "Tue Apr 26 1983 03:36:35",
+      "_id": "35ce83ca8371d66a6490a6629",
+      "text": "Excepteur voluptate reprehenderit duis duis fugiat reprehenderit consectetur nisi. Anim nulla amet aliquip Lorem culpa. Labore voluptate non Lorem irure adipisicing.",
+      "created_at": "Tue Sep 04 1990 21:13:48 GMT+0000 (UTC)",
       "user": {
-        "_id": "205b4345307a67799a2bab39c11865c0",
-        "fullName": "Webb Francis",
+        "_id": "45ce83ca849b6f9d7ac27fe2c",
+        "fullname": "Nettie Cobb",
         "avatar": null
       },
-      "dialog": "205b4345307a67799a2bab39c11865c0"
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
     },
     {
-      "_id": "96429aff102f26711323a98d42a9f8d6",
-      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
-      "date": "Wed Apr 01 2015 12:12:46",
+      "_id": "25ce83ca8e64e10b218c412b1",
+      "text": "Est nostrud irure ut cupidatat pariatur qui aliqua excepteur reprehenderit commodo amet. Fugiat dolor cillum esse consequat enim sunt ullamco elit nulla. Dolor elit pariatur in ad nisi sint ea incididunt.",
+      "created_at": "Wed Oct 06 1982 09:45:38 GMT+0000 (UTC)",
       "user": {
-        "_id": "a2534132d46522cb3b320de1a7894c2b",
-        "fullName": "Webb Francis",
-        "avatar": "https://sun9-25.userapi.com/J8my17a2DP3jf666KQAzuw2dEMAhWELCFxAe1A/uzOI2ifoKgA.jpg"
-      },
-      "dialog": "205b4345307a67799a2bab39c11865c0",
-      "isMe": true,
-      "isReaded": false
-    },
-    {
-      "_id": "2t819afc3d0bbb4708f2d654fc9740a1",
-      "text": "On the other hand, we denounce with righteous indignation",
-      "date": "Thu Jan 20 1983 00:28:07",
-      "user": {
-        "_id": "a2534132d46522cb3b320de1a7894c2b",
-        "fullName": "Webb Francis",
+        "_id": "15ce83ca89d3f3deef8240962",
+        "fullname": "Cole Merritt",
         "avatar": null
       },
-      "dialog": "205b4345307a67799a2bab39c11865c0"
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
     },
     {
-      "_id": "1c819afc3d0bbb4708f2d654fc9740a1",
-      "text": "On the other hand, we denounce with righteous indignation",
-      "date": "Thu Jan 20 1983 00:28:07",
+      "_id": "45ce83ca83ebd82413d9507c5",
+      "text": "Duis ad nulla in commodo adipisicing reprehenderit aliqua consequat ex anim quis. Veniam sit excepteur consequat non eiusmod dolore sunt sint culpa aute duis id exercitation. Mollit veniam pariatur sint esse eiusmod in deserunt elit enim.",
+      "created_at": "Mon Jun 13 2011 09:20:49 GMT+0000 (UTC)",
       "user": {
-        "_id": "a2534132d46522cb3b320de1a7894c2b",
-        "fullName": "Webb Francis",
+        "_id": "15ce83ca840b57ddc4c86a9f9",
+        "fullname": "Haley Norman",
         "avatar": null
       },
-      "dialog": "205b4345307a67799a2bab39c11865c0"
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
     },
     {
-      "_id": "21819afc3d0bbb4708f2d654fc9740a1",
-      "text": "On the other hand, we denounce with righteous indignation",
-      "date": "Thu Jan 20 1983 00:28:07",
+      "_id": "35ce83ca83f2ba0b7649c43cb",
+      "text": "Привет! 😃",
+      "created_at": "Mon Jun 08 1992 04:57:55 GMT+0000 (UTC)",
       "user": {
-        "_id": "a2534132d46522cb3b320de1a7894c2b",
-        "fullName": "Webb Francis",
+        "_id": "35ce83ca8f41ffe5a11c0b72c",
+        "fullname": "Jacobs Barry",
         "avatar": null
       },
-      "dialog": "205b4345307a67799a2bab39c11865c0"
-    }
-  ],
-  "notes": [
-    {
-      "_id": "03b04345307a67799a2bab39c11865c0",
-      "statusNotes": "Yet to start",
-      "title": "Focus Time",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
-      "date_start": "Sat Aug 25 2012",
-      "date_end": "Sat Aug 30 2012",
-      "user": {
-        "_id": "sa2b4345307a67799a2bab39c11865c0",
-        "fullName": "Jack Matison",
-        "avatar": null
-      }
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
     },
     {
-      "_id": "05b04345307a67799a2bab39c11865c0",
-      "statusNotes": "Active",
-      "title": "Delivery Process",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
-      "date_start": "Sat Nov 23 2012",
-      "date_end": "Sat Jan 29 2012",
+      "_id": "35ce83ca89d0fdae4548a8a8c",
+      "text": "Ау, ты где? 😒",
+      "created_at": "Tue Oct 27 2009 08:28:44 GMT+0000 (UTC)",
       "user": {
-        "_id": "205b4345307a67799a2bab39c11865c0",
-        "fullName": "Matthew Wiggins",
-        "avatar": "https://themes.2the.me/Messenger-1.1/demo-light/assets/images/avatars/12.jpg"
-      }
-    },
-    {
-      "_id": "01b04345307a67799a2bab39c11865c0",
-      "statusNotes": "Completed",
-      "title": "QA Testing Devices",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing. Voluptates, voluptate nobis. Iste suscipit quos a molestiae in ratione doloribus fugiat neque ullam fugit labore, rem consectetur sint, magni dolor necessitatibus?",
-      "date_start": "Sat Nov 01 2012",
-      "date_end": "Sat Jan 31 2012",
-      "user": {
-        "_id": "105b4345307a67799a2bab39c11865c0",
-        "fullName": "Matt Jackson",
+        "_id": "15ce83ca8038d9699c179048e",
+        "fullname": "Short Doyle",
         "avatar": null
-      }
+      },
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
     }
   ]
 }

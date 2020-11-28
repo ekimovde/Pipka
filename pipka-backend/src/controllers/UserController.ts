@@ -1,6 +1,10 @@
 import express from "express";
+import { validationResult } from "express-validator";
+import bcrypt from "bcrypt";
 
-import { UserModel } from "../schemas";
+import { UserModel } from "../models";
+import { IUser } from "../models/User";
+import { createJWTToken } from "../utils";
 
 class UserController {
   show(req: express.Request, res: express.Response) {
@@ -8,7 +12,7 @@ class UserController {
     UserModel.findById(id, (err, user) => {
       if (err) {
         return res.status(404).json({
-          message: "User not found!",
+          message: "User not found",
         });
       }
       res.json(user);
@@ -16,7 +20,7 @@ class UserController {
   }
 
   getMe() {
-    // Возвращение нашего пользователя
+    // TODO: Сделать возвращение инфы о самом себе (аутентификация)
   }
 
   create(req: express.Request, res: express.Response) {
@@ -27,7 +31,6 @@ class UserController {
       email: req.body.email,
       password: req.body.password,
     };
-
     const user = new UserModel(postData);
     user
       .save()
@@ -41,19 +44,52 @@ class UserController {
 
   delete(req: express.Request, res: express.Response) {
     const id: string = req.params.id;
-    UserModel.findByIdAndDelete({ _id: id })
+    UserModel.findOneAndRemove({ _id: id })
       .then((user) => {
         if (user) {
           res.json({
-            message: `User - ${user.name} ${user.surName}, deleted!`,
+            message: `User ${user.name} ${user.surName} deleted`,
           });
         }
       })
       .catch(() => {
         res.json({
-          message: "User not found",
+          message: `User not found`,
         });
       });
+  }
+
+  login(req: express.Request, res: express.Response) {
+    const postData = {
+      email: req.body.email,
+      password: req.body.password,
+    };
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+    UserModel.findOne({ email: postData.email }, (err, user: any) => {
+      if (err) {
+        return res.status(404).json({
+          message: "User not found",
+        });
+      }
+
+      if (bcrypt.compareSync(postData.password, user.password)) {
+        const token = createJWTToken(user);
+        res.json({
+          status: "success",
+          token,
+        });
+      } else {
+        res.json({
+          status: "error",
+          message: "Incorrect password or email",
+        });
+      }
+    });
   }
 }
 
