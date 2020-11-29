@@ -1,27 +1,34 @@
 import express from "express";
+import socket from "socket.io";
+
 import { DialogModel, MessageModel } from "../models";
 
 class DialogController {
-  index(req: express.Request, res: express.Response) {
-    const authorId = "5d1ba4777a5a9a1264ba240c";
+  io: socket.Server;
+
+  constructor(io: socket.Server) {
+    this.io = io;
+  }
+
+  index = (req: express.Request, res: express.Response) => {
+    const authorId = req.user._id;
 
     DialogModel.find({ author: authorId })
       .populate(["author", "partner"])
-      .exec(function(err, dialogs) {
-        console.log(err);
+      .exec(function (err, dialogs) {
         if (err) {
           return res.status(404).json({
-            message: "Dialogs not found"
+            message: "Dialogs not found",
           });
         }
         return res.json(dialogs);
       });
-  }
+  };
 
-  create(req: express.Request, res: express.Response) {
+  create = (req: express.Request, res: express.Response) => {
     const postData = {
       author: req.body.author,
-      partner: req.body.partner
+      partner: req.body.partner,
     };
     const dialog = new DialogModel(postData);
 
@@ -31,7 +38,7 @@ class DialogController {
         const message = new MessageModel({
           text: req.body.text,
           user: req.body.author,
-          dialog: dialogObj._id
+          dialog: dialogObj._id,
         });
 
         message
@@ -39,31 +46,31 @@ class DialogController {
           .then(() => {
             res.json(dialogObj);
           })
-          .catch(reason => {
+          .catch((reason) => {
             res.json(reason);
           });
       })
-      .catch(reason => {
+      .catch((reason) => {
         res.json(reason);
       });
-  }
+  };
 
-  delete(req: express.Request, res: express.Response) {
+  delete = (req: express.Request, res: express.Response) => {
     const id: string = req.params.id;
     DialogModel.findOneAndRemove({ _id: id })
-      .then(dialog => {
+      .then((dialog) => {
         if (dialog) {
           res.json({
-            message: `Dialog deleted`
+            message: `Dialog deleted`,
           });
         }
       })
       .catch(() => {
         res.json({
-          message: `Dialog not found`
+          message: `Dialog not found`,
         });
       });
-  }
+  };
 }
 
 export default DialogController;
