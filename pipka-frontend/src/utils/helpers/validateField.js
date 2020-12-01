@@ -3,7 +3,7 @@ export default (key, errors, touched) => {
     if (errors[key]) {
       return { class: "error" };
     } else {
-      return { class: "successed" };
+      return { class: "success" };
     }
   } else {
     return "";

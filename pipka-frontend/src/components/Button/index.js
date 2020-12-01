@@ -9,7 +9,7 @@ const Button = (props) => {
     <button
       {...props}
       className={classNames("button", props.className, {
-        "button--large": props.size === "lg",
+        disabled: props.disabled === true,
       })}
     />
   );

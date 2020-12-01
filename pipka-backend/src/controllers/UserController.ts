@@ -12,14 +12,6 @@ class UserController {
   constructor(io: socket.Server) {
     this.io = io;
   }
-  // TODO: В конструкторе следить за методоами сокета относящихся к юзеру и вызывать соотв. методы
-  // constructor() {
-  //   io.on("connection", function(socket: any) {
-  //     socket.on('', function(obj: any) {
-  //       // Вызывать метод для создания сущности
-  //     })
-  //   });
-  // }
 
   show = (req: express.Request, res: express.Response) => {
     const id: string = req.params.id;
@@ -36,7 +28,7 @@ class UserController {
   getMe = (req: express.Request, res: express.Response) => {
     const id: string = req.user._id;
     UserModel.findById(id, (err, user) => {
-      if (err) {
+      if (err || !user) {
         return res.status(404).json({
           message: "User not found",
         });
@@ -93,7 +85,7 @@ class UserController {
     }
 
     UserModel.findOne({ email: postData.email }, (err, user: any) => {
-      if (err) {
+      if (err || !user) {
         return res.status(404).json({
           message: "User not found",
         });

@@ -1,10 +1,11 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { connect } from "react-redux";
+import { Route, Redirect } from "react-router-dom";
 
 import { Auth, Messenger, Tasks, Settings } from "pages";
 import { Navbar, Sidebar, Info } from "components";
 
-function App() {
+const App = ({ isAuth }) => {
   return (
     <div className="app">
       <Route
@@ -29,8 +30,17 @@ function App() {
         <Route exact path={"/settings"} component={Settings} />
         <Route exact path={["/profile", "/teams"]} component={Info} />
       </div>
+
+      <Route
+        exact
+        path="/"
+        render={() =>
+          isAuth ? <Redirect to="/profile" /> : <Redirect to="/login" />
+        }
+      />
+      {/* {isAuth ? <Redirect to="/profile" /> : <Redirect to="/login" />} */}
     </div>
   );
-}
+};
 
-export default App;
+export default connect(({ user }) => ({ isAuth: user.isAuth }))(App);

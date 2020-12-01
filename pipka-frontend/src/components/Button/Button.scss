@@ -7,6 +7,10 @@
   font-size: 14px;
   color: #fff;
 
+  &.disabled {
+    background-color: #0053b4;
+  }
+
   &:hover {
     background-color: #0053b4;
   }

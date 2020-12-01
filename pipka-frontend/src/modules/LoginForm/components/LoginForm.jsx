@@ -4,16 +4,14 @@ import classNames from "classnames";
 
 import { Button } from "components";
 
-import { validateField } from "utils/helpers";
-
 const LoginForm = (props) => {
   const {
     values,
-    touched,
-    errors,
     handleChange,
     handleBlur,
     handleSubmit,
+    isSubmitting,
+    status,
   } = props;
   return (
     <div className="auth__content">
@@ -27,10 +25,10 @@ const LoginForm = (props) => {
           <div className="offer__block">
             <input
               id="email"
-              className={classNames(
-                "offer__input",
-                validateField("email", errors, touched).class
-              )}
+              className={classNames("offer__input", {
+                error: status === "error",
+                success: status === "success",
+              })}
               type="text"
               placeholder="Enter your email"
               value={values.email || ""}
@@ -42,10 +40,10 @@ const LoginForm = (props) => {
           <div className="offer__block">
             <input
               id="password"
-              className={classNames(
-                "offer__input",
-                validateField("password", errors, touched).class
-              )}
+              className={classNames("offer__input", {
+                error: status === "error",
+                success: status === "success",
+              })}
               type="password"
               placeholder="Enter your password"
               value={values.password || ""}
@@ -61,7 +59,13 @@ const LoginForm = (props) => {
           </div>
         </div>
 
-        <Button onClick={handleSubmit}>Sign In</Button>
+        {status === "error" && (
+          <p className="offer__message">Email or password invalid!</p>
+        )}
+
+        <Button disabled={isSubmitting} onClick={handleSubmit}>
+          Sign In
+        </Button>
 
         <div className="offer__footer">
           <p>Don't have an account yet?</p>
