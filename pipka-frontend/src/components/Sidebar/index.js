@@ -12,7 +12,7 @@ const Sidebar = () => {
         <Route exact path="/teams" component={Teams} />
         <Route
           exact
-          path="/messenger"
+          path={["/messenger", "/dialog/:id"]}
           render={(props) => <Messenger flag={true} {...props} />}
         />
         <Route exact path="/profile" component={Profile} />

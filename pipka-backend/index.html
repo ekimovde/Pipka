@@ -13,13 +13,8 @@
         var socket = io("http://localhost:3003");
 
         window.socket = socket;
-        socket.on("SERVER:NEW_MESSAGE", function(msg) {
-          if (window.user !== msg.user) {
-            console.log("New message:", msg)
-          }
-          // if (window.user !== msg.user) {
-          //   console.log(msg);
-          // }
+        socket.on("SERVER:DIALOG_CREATED", function(data) {
+          console.log(data)
         });
       };
     </script>

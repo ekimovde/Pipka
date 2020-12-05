@@ -1,24 +1,10 @@
-export default ({ isAuth, values, errors, pass }) => {
+export default ({ isAuth, values, errors }) => {
   const rules = {
-    name: (value) => {
+    fullName: (value) => {
       if (!value) {
-        errors.name = "Введите имя";
+        errors.name = "Введите имя и фамилию";
       } else if (!/^(?=.*[а-я])(?=.*[А-Я])(?=.{2,})/i.test(value)) {
-        errors.name = "Неверное имя";
-      }
-    },
-    middleName: (value) => {
-      if (!value) {
-        errors.middleName = "Введите отчество";
-      } else if (!/^(?=.*[а-я])(?=.*[А-Я])(?=.{4,})/i.test(value)) {
-        errors.middleName = "Неверное отчество";
-      }
-    },
-    lastName: (value) => {
-      if (!value) {
-        errors.lastName = "Введите фамилию";
-      } else if (!/^(?=.*[а-я])(?=.*[А-Я])(?=.{4,})/i.test(value)) {
-        errors.lastName = "Неверная фамилия";
+        errors.name = "Неверное имя и фамилия";
       }
     },
     email: (value) => {
@@ -39,10 +25,10 @@ export default ({ isAuth, values, errors, pass }) => {
       }
     },
     confirmPassword: (value) => {
-      if (!value) {
-        errors.confirmPassword = "Повторите пароль";
-      } else if (value !== pass) {
+      if (!isAuth && value !== values.password) {
         errors.confirmPassword = "Пароли не совпадают";
+      } else if (!value) {
+        errors.confirmPassword = "Повторите пароль";
       }
     },
   };

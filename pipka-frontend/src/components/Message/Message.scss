@@ -1,4 +1,4 @@
-@import '~styles/variables';
+@import "~styles/variables";
 
 .message {
   max-width: 440px;
@@ -72,7 +72,7 @@
       flex-direction: row-reverse;
       display: flex;
       .message__avatar {
-        img {
+        .dialogs__item-avatar--symbol {
           margin-right: 0;
           margin-left: 13px;
         }
@@ -81,7 +81,7 @@
       .message__info {
         .message__bubble {
           border-radius: 12px 12px 0px 12px;
-          border: 1px solid #ECECEC;
+          border: 1px solid #ececec;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
           background: #fff;
           .message__text {
@@ -128,7 +128,7 @@
                 margin-right: 0;
               }
               -webkit-animation: 0.8s typingAnimation infinite ease-out 0.1s;
-                animation: 0.8s typingAnimation infinite ease-out 0.1s;
+              animation: 0.8s typingAnimation infinite ease-out 0.1s;
               &:nth-of-type(2) {
                 -webkit-animation: 0.8s typingAnimation infinite ease-out 0.2s;
                 animation: 0.8s typingAnimation infinite ease-out 0.2s;
@@ -188,7 +188,7 @@
         .message__audio-btn {
           button {
             display: flex;
-            background: #0F3997;
+            background: #0f3997;
             width: 28px;
             height: 28px;
             border-style: none;

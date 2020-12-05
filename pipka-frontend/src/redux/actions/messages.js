@@ -1,25 +1,40 @@
-import { messagesApi } from 'utils/api';
+import { messagesApi } from "utils/api";
 
 const actions = {
-  setMessages: items => ({
+  setMessages: (items) => ({
     type: "MESSAGES:SET_ITEMS",
-    payload: items
+    payload: items,
   }),
-  setIsLoading: bool => ({
+  addMessage: (message) => (dispatch, getState) => {
+    const { dialogs } = getState();
+    const { currentDialogId } = dialogs;
+
+    if (currentDialogId === message.dialog._id) {
+      dispatch({
+        type: "MESSAGES:ADD_MESSAGE",
+        payload: message,
+      });
+    }
+  },
+  fetchSendMessage: (text, dialogId) => (dispatch) => {
+    messagesApi.send(text, dialogId);
+  },
+  setIsLoading: (bool) => ({
     type: "MESSAGES:SET_IS_LOADING",
-    payload: bool
+    payload: bool,
   }),
   fetchMessages: (dialogId) => (dispatch) => {
-    dispatch(actions.setIsLoading(true))
-    messagesApi.getAllByDialogId(dialogId)
+    dispatch(actions.setIsLoading(true));
+    messagesApi
+      .getAllByDialogId(dialogId)
       .then(({ data }) => {
-        dispatch(actions.setMessages(data))
-        dispatch(actions.setIsLoading(false))
+        dispatch(actions.setMessages(data));
+        dispatch(actions.setIsLoading(false));
       })
       .catch(() => {
-        dispatch(actions.setIsLoading(false))
-      })
-  }
-}
+        dispatch(actions.setIsLoading(false));
+      });
+  },
+};
 
 export default actions;

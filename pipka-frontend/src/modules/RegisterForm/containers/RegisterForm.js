@@ -1,31 +1,37 @@
-import { withFormik } from 'formik';
+import { withFormik } from "formik";
 
-import RegisterForm from '../components/RegisterForm';
-import validateForm from 'utils/validate';
+import RegisterForm from "../components/RegisterForm";
+import validateForm from "utils/validate";
+
+import { userActions } from "redux/actions";
+import store from "redux/store";
 
 export default withFormik({
   enableReinitialize: true,
   mapPropsToValues: () => ({
-    name: '',
-    middleName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   }),
-  validate: values => {
+  validate: (values) => {
     let errors = {};
-    let pass = values.password;
 
-    validateForm({ isAuth: false, values, errors, pass });
+    validateForm({ isAuth: false, values, errors });
 
     return errors;
   },
-  handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+  handleSubmit: (values, { setSubmitting, setStatus, props }) => {
+    store
+      .dispatch(userActions.fetchUserRegistration(values))
+      .then((data) => {
+        setStatus(data.status);
+        setSubmitting(false);
+        console.log(data.status);
+      })
+      .catch(() => {
+        setSubmitting(false);
+      });
   },
-  displayName: "RegisterForm"
+  displayName: "RegisterForm",
 })(RegisterForm);

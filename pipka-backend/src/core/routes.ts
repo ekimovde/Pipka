@@ -2,7 +2,7 @@ import bodyParser from "body-parser";
 import express from "express";
 import socket from "socket.io";
 import { updateLastSeen, checkAuth } from "../middlewares";
-import { loginValidation } from "../utils/validations";
+import { loginValidation, registerValidation } from "../utils/validations";
 
 import { UserCtrl, DialogCtrl, MessageCtrl } from "../controllers";
 
@@ -12,21 +12,22 @@ const createRoutes = (app: express.Express, io: socket.Server) => {
   const MessageController = new MessageCtrl(io);
 
   app.use(bodyParser.json());
-  app.use(updateLastSeen);
   app.use(checkAuth);
+  app.use(updateLastSeen);
 
   app.get("/user/me", UserController.getMe);
+  app.get("/user/verify", UserController.verify);
+  app.post("/user/login", loginValidation, UserController.login);
+  app.post("/user/registration", registerValidation, UserController.create);
   app.get("/user/:id", UserController.show);
   app.delete("/user/:id", UserController.delete);
-  app.post("/user/registration", UserController.create);
-  app.post("/user/login", loginValidation, UserController.login);
 
+  app.post("/dialogs", DialogController.create);
   app.get("/dialogs", DialogController.index);
   app.delete("/dialogs/:id", DialogController.delete);
-  app.post("/dialogs", DialogController.create);
 
-  app.get("/messages", MessageController.index);
   app.post("/messages", MessageController.create);
+  app.get("/messages", MessageController.index);
   app.delete("/messages/:id", MessageController.delete);
 };
 

@@ -29,7 +29,7 @@ const Dialogs = ({
           <DialogItem
             key={item._id}
             {...item}
-            isMe={item.user._id === userId}
+            isMe={item.author._id === userId}
             onSelect={onSelectDialog}
             currentDialogId={currentDialogId}
           />

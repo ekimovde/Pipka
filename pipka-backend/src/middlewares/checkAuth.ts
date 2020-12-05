@@ -1,9 +1,11 @@
-import express from "express";
 import { verifyJWTToken } from "../utils";
-import { IUser } from "../models/User";
 
 export default (req: any, res: any, next: any) => {
-  if (req.path === "/user/login" || req.path === "/user/registration") {
+  if (
+    req.path === "/user/login" ||
+    req.path === "/user/registration" ||
+    req.path === "/user/verify"
+  ) {
     return next();
   }
 
@@ -14,7 +16,7 @@ export default (req: any, res: any, next: any) => {
       req.user = user.data._doc;
       next();
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(403).json({ message: "Invalid auth token provided." });
     });
 };

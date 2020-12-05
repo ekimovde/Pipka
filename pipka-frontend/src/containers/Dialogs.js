@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { dialogsActions } from "redux/actions";
 import { Dialogs as BaseDialogs } from "components";
 
+import { socket } from "core";
+
 const Dialogs = ({
   fetchDialogs,
   currentDialogId,
@@ -18,14 +20,21 @@ const Dialogs = ({
 
   items = filtred.filter(
     (dialog) =>
-      dialog.user.fullName.toLowerCase().indexOf(value.toLowerCase()) >= 0
+      dialog.author.fullName.toLowerCase().indexOf(value.toLowerCase()) >= 0
   );
+
+  const onNewDialog = () => {
+    fetchDialogs();
+  };
 
   useEffect(() => {
     if (!items.length) {
       fetchDialogs();
     }
-  }, [isLoading, fetchDialogs, items.length]);
+
+    socket.on("SERVER:DIALOG_CREATED", onNewDialog);
+    return () => socket.removeListener("SERVER:DIALOG_CREATED", onNewDialog);
+  }, [isLoading, fetchDialogs]);
 
   useEffect(() => {
     if (dialogsRef.current) {

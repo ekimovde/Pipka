@@ -1,29 +1,30 @@
-import { dialogsApi } from 'utils/api';
+import { dialogsApi } from "utils/api";
 
 const actions = {
-  setDialogs: items => ({
+  setDialogs: (items) => ({
     type: "DIALOGS:SET_ITEMS",
-    payload: items
+    payload: items,
   }),
-  setIsLoading: bool => ({
+  setIsLoading: (bool) => ({
     type: "DIALOGS:SET_IS_LOADING",
-    payload: bool
+    payload: bool,
   }),
-  setCurrentDialogId: id => ({
+  setCurrentDialogId: (id) => ({
     type: "DIALOGS:SET_CURRENT_DIALOG_ID",
-    payload: id
+    payload: id,
   }),
   fetchDialogs: () => (dispatch) => {
-    dispatch(actions.setIsLoading(true))
-    dialogsApi.getAll()
+    dispatch(actions.setIsLoading(true));
+    dialogsApi
+      .getAll()
       .then(({ data }) => {
-        dispatch(actions.setDialogs(data))
-        dispatch(actions.setIsLoading(false))
+        dispatch(actions.setDialogs(data));
+        dispatch(actions.setIsLoading(false));
       })
       .catch(() => {
-        dispatch(actions.setIsLoading(false))
-      })
-  }
-}
+        dispatch(actions.setIsLoading(false));
+      });
+  },
+};
 
 export default actions;

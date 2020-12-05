@@ -1,29 +1,47 @@
-import React, { useState } from 'react';
-// import { UploadField } from '@navjobs/upload';
-import { SmileOutlined, CameraOutlined, AudioOutlined, SendOutlined } from '@ant-design/icons';
-import { Picker } from 'emoji-mart';
+import React, { useState } from "react";
+import {
+  SmileOutlined,
+  CameraOutlined,
+  AudioOutlined,
+  SendOutlined,
+} from "@ant-design/icons";
+import { Picker } from "emoji-mart";
 
-import './DialogInput.scss';
+import "./DialogInput.scss";
 
-const ChatInput = (props) => {
-  const [value, setValue] = useState('');
-  const [emojiPickerVisible, setShowEmojiPicker] = useState('');
+const DialogInput = (props) => {
+  const [value, setValue] = useState("");
+  const [emojiPickerVisible, setShowEmojiPicker] = useState("");
+  const { onSendMessage, currentDialogId } = props;
 
   const toggleEmojiPicker = () => {
-    setShowEmojiPicker(!emojiPickerVisible)
-  }
+    setShowEmojiPicker(!emojiPickerVisible);
+  };
+
+  const handleSendMessage = (e) => {
+    if (e.keyCode === 13) {
+      onSendMessage(value, currentDialogId);
+      setValue("");
+    }
+  };
 
   return (
     <div className="dialog__input">
       <div className="dialog__input-smile">
-        {emojiPickerVisible &&
+        {emojiPickerVisible && (
           <div className="dialog__input-emoji">
             <Picker />
           </div>
-        }
-        <SmileOutlined onClick={toggleEmojiPicker}/>
+        )}
+        <SmileOutlined onClick={toggleEmojiPicker} />
       </div>
-      <input onChange={e => setValue(e.target.value)} type="text" placeholder="Введите текст сообщения…" />
+      <input
+        onChange={(e) => setValue(e.target.value)}
+        onKeyUp={handleSendMessage}
+        type="text"
+        placeholder="Введите текст сообщения…"
+        value={value}
+      />
       <div className="dialog__input-actions">
         {/* <UploadField
           onFiles={files => console.log(files)}
@@ -41,7 +59,7 @@ const ChatInput = (props) => {
         {value ? <SendOutlined /> : <AudioOutlined />}
       </div>
     </div>
-  )
+  );
 };
 
-export default ChatInput;
+export default DialogInput;

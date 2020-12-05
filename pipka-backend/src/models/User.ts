@@ -1,11 +1,10 @@
 import mongoose, { Schema, Document } from "mongoose";
 import { isEmail } from "validator";
 import { generatePasswordHash } from "../utils";
+import { differenceInMinutes } from "date-fns";
 
 export interface IUser extends Document {
-  name?: string;
-  middleName?: string;
-  surName?: string;
+  fullName?: string;
   email?: string;
   password?: string;
   confirmed?: boolean;
@@ -16,17 +15,9 @@ export interface IUser extends Document {
 
 const UserSchema = new Schema(
   {
-    name: {
+    fullName: {
       type: String,
-      required: "Name is required",
-    },
-    middleName: {
-      type: String,
-      required: "MiddleName is required",
-    },
-    surName: {
-      type: String,
-      required: "SurName is required",
+      required: "FullName is required",
     },
     email: {
       type: String,
@@ -42,7 +33,10 @@ const UserSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    avatar: String,
+    avatar: {
+      type: String,
+      default: false,
+    },
     confirm_hash: String,
     last_seen: {
       type: Date,
@@ -54,6 +48,14 @@ const UserSchema = new Schema(
   }
 );
 
+UserSchema.virtual("isOnline").get(function (this: any) {
+  return differenceInMinutes(new Date(), this.last_seen) < 5;
+});
+
+UserSchema.set("toJSON", {
+  virtuals: true,
+});
+
 UserSchema.pre("save", function (next) {
   const user: IUser = this;
 
@@ -62,7 +64,10 @@ UserSchema.pre("save", function (next) {
   generatePasswordHash(user.password)
     .then((hash) => {
       user.password = String(hash);
-      next();
+      generatePasswordHash(+new Date() + "").then((confirmHash) => {
+        user.confirm_hash = String(confirmHash);
+        next();
+      });
     })
     .catch((err) => {
       next(err);

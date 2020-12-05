@@ -7,7 +7,7 @@ import { generateAvatarFromHash } from "utils/helpers";
 import "./Avatar.scss";
 
 const Avatar = ({ user, isNotes }) => {
-  if (user.avatar) {
+  if (user.avatar === "true") {
     return (
       <img
         className={classNames({ "image--notes": isNotes })}
