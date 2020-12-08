@@ -1,7 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import { Profile, Messenger, Teams, Tasks, Layouts } from "pages";
+import { Profile, Teams, Tasks, Layouts } from "pages";
+import { Messenger } from "containers";
 
 import "./Sidebar.scss";
 

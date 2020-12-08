@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+
 import { Emoji } from "emoji-mart";
+import { Popover, Button } from "antd";
+import { EllipsisOutlined } from "@ant-design/icons";
 
 import { Time, IconReaded, Avatar } from "../";
 
@@ -22,6 +25,7 @@ const Message = ({
   isReaded,
   attachments,
   isTyping,
+  onRemoveMessage,
 }) => {
   const AudioMessage = ({ audio }) => {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -138,6 +142,19 @@ const Message = ({
               ))}
             </div>
           )}
+        </div>
+        <div className="message__actions">
+          <Popover
+            content={
+              <div>
+                <Button onClick={onRemoveMessage}>Удалить сообщение</Button>
+              </div>
+            }
+            title="Title"
+            trigger="click"
+          >
+            <Button type="link" shape="circle" icon={<EllipsisOutlined />} />
+          </Popover>
         </div>
 
         <IconReaded isMe={isMe} isReaded={isReaded} />

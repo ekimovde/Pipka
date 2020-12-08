@@ -1,11 +1,11 @@
 import mongoose, { Schema, Document } from "mongoose";
 import { isEmail } from "validator";
 import { generatePasswordHash } from "../utils";
-import { differenceInMinutes } from "date-fns";
+import differenceInMinutes from "date-fns/difference_in_minutes";
 
 export interface IUser extends Document {
-  fullName?: string;
   email?: string;
+  fullname?: string;
   password?: string;
   confirmed?: boolean;
   avatar?: string;
@@ -15,61 +15,58 @@ export interface IUser extends Document {
 
 const UserSchema = new Schema(
   {
-    fullName: {
-      type: String,
-      required: "FullName is required",
-    },
     email: {
       type: String,
       require: "Email address is required",
       validate: [isEmail, "Invalid email"],
-      unique: true,
+      unique: true
+    },
+    fullname: {
+      type: String,
+      required: "Fullname is required"
     },
     password: {
       type: String,
-      required: "Password is required",
+      required: "Password is required"
     },
     confirmed: {
       type: Boolean,
-      default: false,
+      default: false
     },
-    avatar: {
-      type: String,
-      default: false,
-    },
+    avatar: String,
     confirm_hash: String,
     last_seen: {
       type: Date,
-      default: new Date(),
-    },
+      default: new Date()
+    }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 
-UserSchema.virtual("isOnline").get(function (this: any) {
-  return differenceInMinutes(new Date(), this.last_seen) < 5;
+UserSchema.virtual("isOnline").get(function(this: any) {
+  return differenceInMinutes(new Date().toISOString(), this.last_seen) < 5;
 });
 
 UserSchema.set("toJSON", {
-  virtuals: true,
+  virtuals: true
 });
 
-UserSchema.pre("save", function (next) {
+UserSchema.pre("save", function(next) {
   const user: IUser = this;
 
   if (!user.isModified("password")) return next();
 
   generatePasswordHash(user.password)
-    .then((hash) => {
+    .then(hash => {
       user.password = String(hash);
-      generatePasswordHash(+new Date() + "").then((confirmHash) => {
+      generatePasswordHash(+new Date()).then(confirmHash => {
         user.confirm_hash = String(confirmHash);
         next();
       });
     })
-    .catch((err) => {
+    .catch(err => {
       next(err);
     });
 });

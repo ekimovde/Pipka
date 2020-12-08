@@ -15,23 +15,23 @@ class MessageController {
 
     MessageModel.find({ dialog: dialogId })
       .populate(["dialog", "user"])
-      .exec(function (err, messages) {
+      .exec(function(err, messages) {
         if (err) {
           return res.status(404).json({
-            message: "Messages not found",
+            message: "Messages not found"
           });
         }
         return res.json(messages);
       });
   };
 
-  create = (req: express.Request, res: express.Response) => {
+  create = (req: any, res: express.Response) => {
     const userId = req.user._id;
 
     const postData = {
       text: req.body.text,
       dialog: req.body.dialog_id,
-      user: userId,
+      user: userId
     };
 
     const message = new MessageModel(postData);
@@ -43,7 +43,7 @@ class MessageController {
           if (err) {
             return res.status(500).json({
               status: "error",
-              message: err,
+              message: err
             });
           }
 
@@ -51,11 +51,11 @@ class MessageController {
             { _id: postData.dialog },
             { lastMessage: message._id },
             { upsert: true },
-            function (err) {
+            function(err) {
               if (err) {
                 return res.status(500).json({
                   status: "error",
-                  message: err,
+                  message: err
                 });
               }
             }
@@ -66,7 +66,7 @@ class MessageController {
           this.io.emit("SERVER:NEW_MESSAGE", message);
         });
       })
-      .catch((reason) => {
+      .catch(reason => {
         res.json(reason);
       });
   };
@@ -74,16 +74,16 @@ class MessageController {
   delete = (req: express.Request, res: express.Response) => {
     const id: string = req.params.id;
     MessageModel.findOneAndRemove({ _id: id })
-      .then((message) => {
+      .then(message => {
         if (message) {
           res.json({
-            message: `Message deleted`,
+            message: `Message deleted`
           });
         }
       })
       .catch(() => {
         res.json({
-          message: `Message not found`,
+          message: `Message not found`
         });
       });
   };

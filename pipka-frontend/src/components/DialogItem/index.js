@@ -9,11 +9,11 @@ import "./DialogItem.scss";
 
 const DialogItem = ({
   _id,
-  unreaded,
   isMe,
   onSelect,
   currentDialogId,
   author,
+  partner,
   lastMessage,
 }) => {
   return (
@@ -30,7 +30,7 @@ const DialogItem = ({
         </div>
         <div className="dialogs__item-info">
           <div className="dialogs__item-info-top">
-            <b>{lastMessage.user.fullName}</b>
+            <b>{partner && partner.fullName}</b>
             <span>
               <Time date={lastMessage.updatedAt} type="dialogItem-date" />
             </span>
@@ -50,14 +50,14 @@ const DialogItem = ({
   );
 };
 
-// DialogItem.propTypes = {
-//   _id: PropTypes.string,
-//   user: PropTypes.object,
-//   text: PropTypes.string,
-//   created_at: PropTypes.string,
-//   isMe: PropTypes.bool,
-//   currentDialogId: PropTypes.oneOfType([null || PropTypes.string]),
-//   onSelect: PropTypes.func,
-// };
+DialogItem.propTypes = {
+  _id: PropTypes.string,
+  author: PropTypes.object,
+  lastMessage: PropTypes.object,
+  created_at: PropTypes.string,
+  isMe: PropTypes.bool,
+  currentDialogId: PropTypes.oneOfType([null || PropTypes.string]),
+  onSelect: PropTypes.func,
+};
 
 export default DialogItem;

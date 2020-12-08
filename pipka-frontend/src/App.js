@@ -49,13 +49,13 @@ const App = ({ isAuth }) => {
         <Route exact path={["/profile", "/teams"]} component={Info} />
       </div>
 
-      {/* <Route
+      <Route
         path="/"
         render={() =>
           isAuth ? <Redirect to="/messenger" /> : <Redirect to="/login" />
         }
-      /> */}
-      {isAuth ? <Redirect to="/profile" /> : <Redirect to="/login" />}
+      />
+      {/* {isAuth ? <Redirect to="/profile" /> : <Redirect to="/login" />} */}
     </div>
   );
 };

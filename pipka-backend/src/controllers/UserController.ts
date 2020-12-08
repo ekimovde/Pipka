@@ -12,6 +12,14 @@ class UserController {
   constructor(io: socket.Server) {
     this.io = io;
   }
+  // TODO: В конструкторе следить за методоами сокета относящихся к юзеру и вызывать соотв. методы
+  // constructor() {
+  //   io.on("connection", function(socket: any) {
+  //     socket.on('', function(obj: any) {
+  //       // Вызывать метод для создания сущности
+  //     })
+  //   });
+  // }
 
   show = (req: express.Request, res: express.Response) => {
     const id: string = req.params.id;
@@ -25,7 +33,7 @@ class UserController {
     });
   };
 
-  getMe = (req: express.Request, res: express.Response) => {
+  getMe = (req: any, res: express.Response) => {
     const id: string = req.user._id;
     UserModel.findById(id, (err, user: any) => {
       if (err || !user) {
@@ -37,13 +45,29 @@ class UserController {
     });
   };
 
+  findUsers = (req: any, res: express.Response) => {
+    const query: string = req.query.query;
+    UserModel.find()
+      .or([
+        { fullName: new RegExp(query, "i") },
+        { email: new RegExp(query, "i") },
+      ])
+      .then((users: any) => res.json(users))
+      .catch((err: any) => {
+        return res.status(404).json({
+          status: "error",
+          message: err,
+        });
+      });
+  };
+
   delete = (req: express.Request, res: express.Response) => {
     const id: string = req.params.id;
     UserModel.findOneAndRemove({ _id: id })
       .then((user) => {
         if (user) {
           res.json({
-            message: `User ${user.fullName} deleted`,
+            message: `User ${user.fullname} deleted`,
           });
         }
       })
@@ -56,8 +80,8 @@ class UserController {
 
   create = (req: express.Request, res: express.Response) => {
     const postData = {
-      fullName: req.body.fullName,
       email: req.body.email,
+      fullname: req.body.fullname,
       password: req.body.password,
     };
 
@@ -90,24 +114,17 @@ class UserController {
     }
 
     UserModel.findOne({ confirm_hash: hash }, (err, user) => {
-      if (err) {
+      if (err || !user) {
         return res.status(404).json({
           status: "error",
-          message: err,
-        });
-      }
-      if (!user) {
-        return res.json({
-          status: "error",
-          message: "Hash not found!",
+          message: "Hash not found",
         });
       }
 
       user.confirmed = true;
-
       user.save((err) => {
         if (err) {
-          return res.status(403).json({
+          return res.status(404).json({
             status: "error",
             message: err,
           });
@@ -115,7 +132,7 @@ class UserController {
 
         res.json({
           status: "success",
-          message: "Аккаунт успешно подтверждён!",
+          message: "Аккаунт успешно подтвержден!",
         });
       });
     });
@@ -147,7 +164,7 @@ class UserController {
           token,
         });
       } else {
-        res.json({
+        res.status(403).json({
           status: "error",
           message: "Incorrect password or email",
         });

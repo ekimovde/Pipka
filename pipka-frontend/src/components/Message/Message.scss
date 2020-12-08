@@ -55,6 +55,15 @@
     }
   }
 
+  .message__actions {
+    display: flex;
+    align-items: center;
+
+    button {
+      transform: rotate(90deg);
+    }
+  }
+
   .message__avatar {
     display: flex;
     flex-direction: column-reverse;
@@ -95,6 +104,17 @@
         flex-direction: column-reverse;
         img {
           margin-right: 9px;
+        }
+      }
+
+      .message__actions {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 147px;
+
+        button {
+          transform: rotate(90deg);
         }
       }
     }

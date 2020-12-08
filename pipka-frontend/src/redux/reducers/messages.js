@@ -17,6 +17,11 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         items: [...state.items, payload],
       };
+    case "MESSAGES:REMOVE_MESSAGE":
+      return {
+        ...state,
+        items: state.items.filter((message) => message._id !== payload),
+      };
     case "MESSAGES:SET_IS_LOADING":
       return {
         ...state,

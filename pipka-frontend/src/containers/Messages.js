@@ -13,6 +13,7 @@ const Messages = ({
   items,
   user,
   isLoading,
+  removeMessageById,
 }) => {
   const messagesRef = useRef(null);
 
@@ -40,6 +41,7 @@ const Messages = ({
       user={user}
       items={items}
       isLoading={isLoading}
+      onRemoveMessage={removeMessageById}
       blockRef={messagesRef}
     />
   );

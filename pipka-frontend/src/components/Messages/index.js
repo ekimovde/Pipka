@@ -7,7 +7,7 @@ import { DialogInput, Status } from "containers";
 
 import { EllipsisOutlined } from "@ant-design/icons";
 
-const Messages = ({ items, isLoading, blockRef, user }) => {
+const Messages = ({ items, isLoading, blockRef, user, onRemoveMessage }) => {
   return isLoading ? (
     <div className="dialog__loading">
       <Spin size="large" />
@@ -30,6 +30,7 @@ const Messages = ({ items, isLoading, blockRef, user }) => {
                 {...item}
                 key={item._id}
                 isMe={user._id === item.user._id}
+                onRemoveMessage={onRemoveMessage.bind(this, item._id)}
               />
             ))}
           </div>

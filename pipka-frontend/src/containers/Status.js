@@ -20,8 +20,6 @@ export const Status = ({ currentDialogId, user, dialogs }) => {
     partner = currentDialogObj.author;
   }
 
-  console.log(partner);
-
   return <StatusBase online={partner.isOnline} fullName={partner.fullName} />;
 };
 

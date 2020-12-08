@@ -1,4 +1,6 @@
+import express from "express";
 import { verifyJWTToken } from "../utils";
+import { IUser } from "../models/User";
 
 export default (req: any, res: any, next: any) => {
   if (

@@ -3,16 +3,17 @@ import { UserModel } from "../models";
 
 export default (
   req: express.Request,
-  _: express.Response,
+  __: express.Response,
   next: express.NextFunction
 ) => {
   if (req.user) {
     UserModel.findOneAndUpdate(
-      { _id: req.user.id },
+      { _id: req.user._id },
       {
-        last_seen: new Date(),
+        last_seen: new Date()
       },
-      { new: true }
+      { new: true },
+      () => {}
     );
   }
   next();
