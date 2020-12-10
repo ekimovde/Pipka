@@ -1,8 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import { Profile, Teams, Tasks, Layouts } from "pages";
-import { Messenger } from "containers";
+import { Profile, Teams } from "pages";
+import { Messenger, Tasks } from "containers";
 
 import "./Sidebar.scss";
 
@@ -22,7 +22,6 @@ const Sidebar = () => {
           path="/tasks"
           render={(props) => <Tasks flag={true} {...props} />}
         />
-        <Route exact path="/settings" component={Layouts} />
       </div>
     </div>
   );

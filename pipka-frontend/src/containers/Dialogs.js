@@ -34,7 +34,7 @@ const Dialogs = ({
 
     socket.on("SERVER:DIALOG_CREATED", onNewDialog);
     return () => socket.removeListener("SERVER:DIALOG_CREATED", onNewDialog);
-  }, [isLoading, fetchDialogs]);
+  }, [fetchDialogs]);
 
   useEffect(() => {
     if (dialogsRef.current) {

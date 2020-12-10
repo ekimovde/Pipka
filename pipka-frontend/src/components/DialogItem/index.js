@@ -2,6 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import reactStringReplace from "react-string-replace";
+import { Emoji } from "emoji-mart";
 
 import { IconReaded, Avatar, Time } from "../";
 
@@ -36,7 +38,11 @@ const DialogItem = ({
             </span>
           </div>
           <div className="dialogs__item-info-bottom">
-            <p>{lastMessage.text}</p>
+            <p>
+              {reactStringReplace(lastMessage.text, /:(.+?):/g, (match, i) => (
+                <Emoji emoji={match} set="apple" size={20} key={i} />
+              ))}
+            </p>
             {isMe && <IconReaded isMe={isMe} isReaded={false} />}
             {lastMessage.unreaded > 0 && (
               <div className="dialogs__item-info-count">

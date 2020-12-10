@@ -1,24 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 
 import { Notes } from "containers";
-import { FormOutlined, CheckOutlined, ReadOutlined } from "@ant-design/icons";
-import logoSvg from "assets/img/logo.svg";
+import { FormOutlined } from "@ant-design/icons";
+
+import { Modal, Select, Input, Button, Form, DatePicker } from "antd";
+import { format } from "date-fns";
 
 import "./Tasks.scss";
 
-const color = ["red", "orange", "yellow", "green", "blue", "violet"];
+const { Option } = Select;
+const { TextArea } = Input;
+const { RangePicker } = DatePicker;
 
-const Tasks = ({ flag }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [activeColor, setActiveColor] = useState("");
+const dateFormat = "YYYY-MM-DD";
 
-  const onClickShowModal = () => {
-    setShowModal(!showModal);
-  };
-  const onClickActiveColor = (color) => {
-    setActiveColor(color);
+const Tasks = ({
+  flag,
+  user,
+  users,
+  visible,
+  changeTask,
+  selectedUserId,
+  inputValues,
+  taskText,
+  taskName,
+  isLoading,
+  onClose,
+  onShow,
+  onChangeInput,
+  onSelectUser,
+  onSearch,
+  setDate,
+  onModalOk,
+  setChangeTask,
+  onChangeTextArea,
+  onChangeTaskName,
+}) => {
+  const options =
+    users &&
+    users.map((user) => <Option key={user._id}>{user.fullName}</Option>);
+
+  const onChangeData = (value, dateString) => {
+    let dates = dateString;
+    setDate({ dateStart: dates[0], dateEnd: dates[1] });
+
+    setChangeTask(true);
   };
 
   return flag ? (
@@ -30,10 +57,7 @@ const Tasks = ({ flag }) => {
       </div>
 
       <div className="sidebar__tasks-bottom">
-        <div
-          className="sidebar__tasks-group"
-          onClick={() => onClickShowModal()}
-        >
+        <div className="sidebar__tasks-group" onClick={onShow}>
           <div className="sidebar__tasks-stretched">
             <div className="sidebar__tasks-icon">
               <FormOutlined />
@@ -47,79 +71,67 @@ const Tasks = ({ flag }) => {
         </div>
       </div>
 
-      {showModal && (
-        <div className="notes__wrappers">
-          <div className="notes__modal">
-            <div className="notes__logo">
-              <img src={logoSvg} alt="" />
-            </div>
-            <div className="notes__info">
-              <h2>Create an Note</h2>
-              <ReadOutlined />
-            </div>
-            <form className="notes__form">
-              <div className="notes__forms">
-                <div className="notes__group">
-                  <label>Title</label>
-                  <input type="text" placeholder="Type your title" />
-                </div>
+      <Modal
+        title="Создать задание"
+        visible={visible}
+        onCancel={onClose}
+        footer={[
+          <Button key="back" onClick={onClose}>
+            Закрыть
+          </Button>,
+          <Button
+            key="submit"
+            type="primary"
+            disabled={!changeTask}
+            loading={isLoading}
+            onClick={onModalOk}
+          >
+            Создать
+          </Button>,
+        ]}
+      >
+        <Form className="add-dialog-form">
+          <Form.Item label="Введите имя или Email пользователя">
+            <Select
+              showSearch
+              value={inputValues}
+              onChange={onChangeInput}
+              onSearch={onSearch}
+              onSelect={onSelectUser}
+              placeholder="Введите имя или почту пользователя"
+              style={{ width: "100%" }}
+              notFoundContent={null}
+              defaultActiveFirstOption={false}
+              showArrow={false}
+              filterOption={false}
+            >
+              {options}
+            </Select>
+          </Form.Item>
 
-                <div className="notes__group">
-                  <label>Description</label>
-                  <textarea type="text" placeholder="Type your description" />
-                </div>
+          {selectedUserId && (
+            <Form.Item label="Введите текст задания">
+              <TextArea
+                autoSize={{ minRows: 3, maxRows: 6 }}
+                onChange={onChangeTextArea}
+                value={taskText}
+              />
+            </Form.Item>
+          )}
 
-                <div className="notes__group notes__group-color">
-                  <label>Color</label>
-                  <ul className="notes__menu">
-                    {color.map((color, index) => (
-                      <li
-                        className={classNames(`notes__item ${color}`, {
-                          active: activeColor === color,
-                        })}
-                        key={index}
-                        onClick={() => onClickActiveColor(color)}
-                      >
-                        <div className={classNames(`notes__color ${color}`)}>
-                          <CheckOutlined />
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          {selectedUserId && (
+            <Form.Item label="Введите название задания">
+              <Input onChange={onChangeTaskName} value={taskName} />
+            </Form.Item>
+          )}
 
-                <div className="notes__group">
-                  <label>Date start</label>
-                  <input
-                    type="date"
-                    placeholder="Type your title"
-                    className="notes__date"
-                  />
-                </div>
-
-                <div className="notes__group">
-                  <label>Date end</label>
-                  <input
-                    type="date"
-                    placeholder="Type your title"
-                    className="notes__date"
-                  />
-                </div>
-              </div>
-
-              <div className="notes__buttons">
-                <button
-                  className="notes__btn notes__btn-cancel"
-                  onClick={() => onClickShowModal()}
-                >
-                  Cancel
-                </button>
-                <button className="notes__btn">Create</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+          {selectedUserId && (
+            <Form.Item label="Укажите сроки выполнения задания">
+              <RangePicker onChange={onChangeData} allowClear={false} />
+            </Form.Item>
+          )}
+        </Form>
+      </Modal>
     </div>
   ) : (
     <Notes />

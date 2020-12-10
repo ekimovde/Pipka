@@ -25,7 +25,17 @@
 
         .message__text {
           color: #fff;
-          font-size: 14px;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+
+          .emoji-mart-emoji {
+            display: block;
+
+            span {
+              display: block;
+            }
+          }
         }
       }
 
@@ -55,12 +65,19 @@
     }
   }
 
-  .message__actions {
+  .message__block {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-    button {
-      transform: rotate(90deg);
+    .message__actions {
+      display: flex;
+      align-items: center;
+
+      button {
+        transform: rotate(90deg);
+      }
     }
   }
 
@@ -99,22 +116,24 @@
         }
       }
 
-      .message__checked {
-        display: flex;
-        flex-direction: column-reverse;
-        img {
-          margin-right: 9px;
-        }
-      }
-
-      .message__actions {
+      .message__block {
         display: flex;
         align-items: center;
-        position: absolute;
-        right: 147px;
+        justify-content: center;
+        flex-direction: column;
 
-        button {
-          transform: rotate(90deg);
+        .message__checked {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .message__actions {
+          display: flex;
+          align-items: center;
+
+          button {
+            transform: rotate(90deg);
+          }
         }
       }
     }

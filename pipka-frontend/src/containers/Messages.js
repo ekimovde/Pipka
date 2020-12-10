@@ -43,6 +43,7 @@ const Messages = ({
       isLoading={isLoading}
       onRemoveMessage={removeMessageById}
       blockRef={messagesRef}
+      currentDialogId={currentDialogId}
     />
   );
 };

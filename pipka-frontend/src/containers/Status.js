@@ -14,7 +14,7 @@ export const Status = ({ currentDialogId, user, dialogs }) => {
 
   let partner = {};
 
-  if (currentDialogObj.author._id === user._id) {
+  if (user && currentDialogObj.author._id === user._id) {
     partner = currentDialogObj.partner;
   } else {
     partner = currentDialogObj.author;

@@ -24,19 +24,19 @@ const actions = {
     payload: bool,
   }),
   removeMessageById: (id) => (dispatch) => {
-    dispatch({
-      type: "MESSAGES:REMOVE_MESSAGE",
-      payload: id,
-    });
-    messagesApi
-      .removeById(id)
-      .then(({ data }) => {
-        // dispatch({
-        //   type: "MESSAGES:REMOVE_MESSAGE",
-        //   payload: id,
-        // });
-      })
-      .catch(() => {});
+    if (window.confirm("Вы действительно хотите удалить сообщение?")) {
+      messagesApi
+        .removeById(id)
+        .then(({ data }) => {
+          dispatch({
+            type: "MESSAGES:REMOVE_MESSAGE",
+            payload: id,
+          });
+        })
+        .catch(() => {
+          dispatch(actions.setIsLoading(false));
+        });
+    }
   },
   fetchMessages: (dialogId) => (dispatch) => {
     dispatch(actions.setIsLoading(true));

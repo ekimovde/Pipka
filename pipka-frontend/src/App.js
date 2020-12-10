@@ -2,34 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
-import { Auth, Messenger, Tasks, Settings } from "pages";
-import { Navbar, Sidebar, Info } from "components";
+import { Auth, Messenger, Tasks } from "pages";
+import { Navbar, Sidebar } from "components";
+import { Info } from "containers";
 
 const App = ({ isAuth }) => {
   return (
     <div className="app">
       <Route
         exact
-        path={[
-          "/teams",
-          "/messenger",
-          "/profile",
-          "/settings",
-          "/tasks",
-          "/dialog/:id",
-        ]}
+        path={["/teams", "/messenger", "/profile", "/tasks", "/dialog/:id"]}
         component={Navbar}
       />
       <Route
         exact
-        path={[
-          "/teams",
-          "/messenger",
-          "/profile",
-          "/settings",
-          "/tasks",
-          "/dialog/:id",
-        ]}
+        path={["/teams", "/messenger", "/profile", "/tasks", "/dialog/:id"]}
         component={Sidebar}
       />
 
@@ -45,7 +32,6 @@ const App = ({ isAuth }) => {
           component={Messenger}
         />
         <Route exact path={"/tasks"} component={Tasks} />
-        <Route exact path={"/settings"} component={Settings} />
         <Route exact path={["/profile", "/teams"]} component={Info} />
       </div>
 

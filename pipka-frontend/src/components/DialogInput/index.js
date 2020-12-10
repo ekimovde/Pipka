@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   SmileOutlined,
   CameraOutlined,
@@ -11,8 +11,9 @@ import "./DialogInput.scss";
 
 const DialogInput = (props) => {
   const [value, setValue] = useState("");
-  const [emojiPickerVisible, setShowEmojiPicker] = useState("");
+  const [emojiPickerVisible, setShowEmojiPicker] = useState(false);
   const { onSendMessage, currentDialogId } = props;
+  const contextRef = useRef();
 
   const toggleEmojiPicker = () => {
     setShowEmojiPicker(!emojiPickerVisible);
@@ -25,12 +26,27 @@ const DialogInput = (props) => {
     }
   };
 
+  const handleOutsideClick = (e) => {
+    let path = e.path || (e.composedPath && e.composedPath());
+    if (!path.includes(contextRef.current)) {
+      setShowEmojiPicker(false);
+    }
+  };
+
+  const addEmoji = ({ colons }) => {
+    setValue((value + " " + colons).trim());
+  };
+
+  useEffect(() => {
+    document.body.addEventListener("click", handleOutsideClick);
+  });
+
   return (
     <div className="dialog__input">
-      <div className="dialog__input-smile">
+      <div className="dialog__input-smile" ref={contextRef}>
         {emojiPickerVisible && (
           <div className="dialog__input-emoji">
-            <Picker />
+            <Picker onSelect={(emojiTag) => addEmoji(emojiTag)} />
           </div>
         )}
         <SmileOutlined onClick={toggleEmojiPicker} />

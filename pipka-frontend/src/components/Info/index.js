@@ -1,19 +1,16 @@
 import React from "react";
 
+import { Avatar } from "components";
+
 import "./Info.scss";
 
-const Info = () => {
+const Info = ({ user }) => {
   return (
     <div className="info">
       <div className="info__block">
-        <div className="info__image">
-          <img
-            src="https://themes.2the.me/Messenger-1.1/demo-light/assets/images/avatars/12.jpg"
-            alt=""
-          />
-        </div>
+        <div className="info__image">{user && <Avatar user={user} />}</div>
         <div className="info__text">
-          <b>Hey, Matthew!</b>
+          <b>Hey, {user && user.fullName}!</b>
           <span>Please select a chat to start messaging.</span>
         </div>
       </div>

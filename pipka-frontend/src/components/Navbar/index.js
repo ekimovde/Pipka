@@ -5,7 +5,6 @@ import {
   UserOutlined,
   FileTextOutlined,
   MessageOutlined,
-  SettingOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
 import logoSvg from "assets/img/logo.svg";
@@ -43,14 +42,6 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-        </div>
-
-        <div className="navbars__footer">
-          <div className="navbars__settings">
-            <NavLink to="/settings" activeClassName="active">
-              <SettingOutlined />
-            </NavLink>
-          </div>
         </div>
       </div>
     </div>
