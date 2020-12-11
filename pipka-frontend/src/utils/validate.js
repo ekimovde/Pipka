@@ -2,9 +2,9 @@ export default ({ isAuth, values, errors }) => {
   const rules = {
     fullName: (value) => {
       if (!value) {
-        errors.name = "Введите имя и фамилию";
-      } else if (!/^(?=.*[а-я])(?=.*[А-Я])(?=.{2,})/i.test(value)) {
-        errors.name = "Неверное имя и фамилия";
+        errors.fullName = "Введите имя и фамилию";
+      } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.{2,})/i.test(value)) {
+        errors.fullName = "Неверное имя и фамилия";
       }
     },
     email: (value) => {

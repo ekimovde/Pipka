@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 import { Button, FormField } from "components";
 import { Checkbox } from "antd";
 
-const RegisterForm = (props) => {
-  const {
-    values,
-    touched,
-    errors,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-  } = props;
+const RegisterForm = ({
+  values,
+  touched,
+  errors,
+  handleChange,
+  handleBlur,
+  handleSubmit,
+  isSubmitting,
+  isCoach,
+}) => {
+  const onChecked = (e) => {
+    values[isCoach] = e.target.checked;
+    console.log(values[isCoach]);
+  };
 
   return (
     <div className="auth__content">
@@ -65,7 +69,7 @@ const RegisterForm = (props) => {
           />
 
           <div className="offer__reset offer__reset-checked">
-            <Checkbox>I'm a coach</Checkbox>
+            <Checkbox onChange={onChecked}>I'm a coach</Checkbox>
           </div>
         </div>
 

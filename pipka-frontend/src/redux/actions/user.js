@@ -33,15 +33,9 @@ const actions = {
       return data;
     });
   },
-  fetchUserRegistration: (postData) => (dispatch) => {
+  fetchUserRegister: (postData) => () => {
     console.log(postData);
-    return userApi.register(postData).then(({ data }) => {
-      console.log(data);
-      // if (data.status !== "error") {
-
-      // }
-      return data;
-    });
+    return userApi.register(postData);
   },
 };
 

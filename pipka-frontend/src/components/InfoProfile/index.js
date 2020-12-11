@@ -1,6 +1,7 @@
 import React from "react";
 
 import { StarOutlined, MailOutlined, ImportOutlined } from "@ant-design/icons";
+import { Tag } from "antd";
 
 import { Avatar } from "components";
 
@@ -23,7 +24,11 @@ const InfoProfile = ({ user }) => {
           <div className="sidebar__profile-text">
             <h5>{user && user.fullName}</h5>
             <p>
-              Bootstrap is an open source toolkit for developing web with HTML.
+              {user && user.isOnline ? (
+                <Tag color="green">Спортсмен</Tag>
+              ) : (
+                <Tag color="purple">Тренер</Tag>
+              )}
             </p>
           </div>
         </div>

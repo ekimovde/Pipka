@@ -1,18 +1,20 @@
 import { withFormik } from "formik";
 
 import RegisterForm from "../components/RegisterForm";
-import validateForm from "utils/validate";
 
+import validateForm from "utils/validate";
 import { userActions } from "redux/actions";
+
 import store from "redux/store";
 
-export default withFormik({
+const registerFormContainer = withFormik({
   enableReinitialize: true,
   mapPropsToValues: () => ({
     fullName: "",
     email: "",
     password: "",
     confirmPassword: "",
+    isCoach: false,
   }),
   validate: (values) => {
     let errors = {};
@@ -22,12 +24,18 @@ export default withFormik({
     return errors;
   },
   handleSubmit: (values, { setSubmitting, setStatus, props }) => {
+    const postData = {
+      fullName: values.fullName,
+      email: values.email,
+      password: values.password,
+      isCoach: values.undefined,
+    };
     store
-      .dispatch(userActions.fetchUserRegistration(values))
+      .dispatch(userActions.fetchUserRegister(postData))
       .then((data) => {
         setStatus(data.status);
+        props.history.push("/register/verify");
         setSubmitting(false);
-        console.log(data.status);
       })
       .catch(() => {
         setSubmitting(false);
@@ -35,3 +43,5 @@ export default withFormik({
   },
   displayName: "RegisterForm",
 })(RegisterForm);
+
+export default registerFormContainer;

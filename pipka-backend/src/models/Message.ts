@@ -1,35 +1,26 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { IDialog } from "./Dialog";
 
 export interface IMessage extends Document {
-  text: {
-    type: string;
-    require: boolean;
-  };
-  dialog: {
-    type: Schema.Types.ObjectId;
-    ref: string;
-    require: true;
-  };
-  unread: {
-    type: boolean;
-    defaul: boolean;
-  };
+  text: string;
+  dialog: IDialog | string;
+  read: boolean;
 }
 
-// TODO: Сделать аттач файлов
-// attachemets:
 const MessageSchema = new Schema(
   {
     text: { type: String, require: Boolean },
     dialog: { type: Schema.Types.ObjectId, ref: "Dialog", require: true },
     user: { type: Schema.Types.ObjectId, ref: "User", require: true },
-    unread: {
+    read: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
+    attachments: [{ type: Schema.Types.ObjectId, ref: "UploadFile" }],
   },
   {
-    timestamps: true
+    timestamps: true,
+    usePushEach: true,
   }
 );
 
